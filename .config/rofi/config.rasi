@@ -2,6 +2,7 @@
 
 configuration {
 	hover-select: true;
+	kb-cancel: "Escape,[133],Control+[133]";
 	me-select-entry: "";
-	me-accept-entry: [ MousePrimary, MouseSecondary ];
+	me-accept-entry: "MousePrimary,MouseSecondary";
 }

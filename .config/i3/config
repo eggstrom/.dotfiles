@@ -12,19 +12,19 @@ focus_follows_mouse no
 set $mod Mod4
 
 bindcode 133 --release exec ~/.config/rofi/scripts/main.sh
-bindcode Ctrl+133 exec --no-startup-id ~/.config/rofi/scripts/alt.sh
+bindcode Ctrl+133 --release exec --no-startup-id ~/.config/rofi/scripts/alt.sh
 bindsym $mod+Escape kill
 bindsym $mod+Ctrl+Escape exec --no-startup-id ~/.config/rofi/scripts/power.sh
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 bindsym $mod+F5 reload
 bindsym $mod+Ctrl+F5 restart
-bindsym $mod+space floating toggle
-bindsym $mod+Ctrl+space fullscreen toggle
+bindsym $mod+space fullscreen disable; floating toggle
+bindsym $mod+Ctrl+space floating disable; fullscreen toggle
 bindsym $mod+Shift+space focus mode_toggle
 
-bindsym --release Print exec --no-startup-id "maim -Blsu --color=0,0,0,0.75 | xclip -selection clipboard -t image/png"
+bindsym --release Print exec --no-startup-id 'maim -Blsu --color=0,0,0,0.75 | xclip -selection clipboard -t image/png'
 bindsym $mod+Print exec --no-startup-id "maim -Bu -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
-bindsym $mod+Ctrl+Print exec --no-startup-id "maim -u | xclip -selection clipboard -t image/png"
+bindsym $mod+Ctrl+Print exec --no-startup-id 'maim -u | xclip -selection clipboard -t image/png'
 
 # floating_modifier $mod
 # bindsym --whole-window $mod+button2 kill

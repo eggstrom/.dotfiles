@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-options=$(find ~/Pictures/backgrounds | file --mime-type -f - | grep image | rev | cut -d: -f2- | rev | cut -d/ -f6-)
+options=$(find ~/Pictures/backgrounds | sort | file --mime-type -f - | grep image | rev | cut -d: -f2- | rev | cut -d/ -f6-)
 width=$(echo "$options" | wc -L)
 
 option=$(echo "$options" | rofi -dmenu -i -p '' -theme-str "window { width: $width%; }")

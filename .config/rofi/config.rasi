@@ -1,0 +1,7 @@
+@theme "themes/theme.rasi"
+
+configuration {
+	hover-select: true;
+	me-select-entry: "";
+	me-accept-entry: [ MousePrimary, MouseSecondary ];
+}

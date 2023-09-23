@@ -1,0 +1,5 @@
+* {{
+    background: {background}c0;
+    foreground: {foreground};
+    border: {color2};
+}}

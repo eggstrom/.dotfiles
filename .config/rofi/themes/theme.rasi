@@ -1,0 +1,38 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+* {
+	font: "JetBrains Mono Nerd Font 16";
+	background-color: #00000000;
+	text-color: @foreground;
+	spacing: 0;
+}
+
+window {
+	width: 33%;
+	background-color: @background;
+	border-color: @border;
+	border: 2px;
+}
+
+inputbar {
+	background-color: @border;
+}
+
+listview {
+	lines: 10;
+	columns: 1;
+	fixed-height: false;
+}
+
+inputbar, element {
+	padding: 4px;
+}
+
+element selected {
+	background-color: @foreground;
+	text-color: @border;
+}
+
+element-text {
+	text-color: inherit;
+}

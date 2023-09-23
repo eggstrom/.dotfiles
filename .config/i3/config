@@ -11,27 +11,29 @@ focus_follows_mouse no
 
 set $mod Mod4
 
-bindcode 133 --release exec ~/.config/rofi/scripts/main.sh
-bindcode Ctrl+133 --release exec --no-startup-id ~/.config/rofi/scripts/alt.sh
-bindsym $mod+Escape kill
-bindsym $mod+Ctrl+Escape exec --no-startup-id ~/.config/rofi/scripts/power.sh
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
-bindsym $mod+F5 reload
-bindsym $mod+Ctrl+F5 restart
-bindsym $mod+space fullscreen disable; floating toggle
-bindsym $mod+Ctrl+space floating disable; fullscreen toggle
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+q kill
+bindsym $mod+r reload
+bindsym $mod+Ctrl+r restart
 
-bindsym --release Print exec --no-startup-id 'maim -Blsu --color=0,0,0,0.75 | xclip -selection clipboard -t image/png'
+bindsym $mod+Ctrl+q exec --no-startup-id ~/.config/rofi/scripts/power.sh
+bindsym $mod+w --release exec ~/.config/rofi/scripts/main.sh
+bindsym $mod+Ctrl+w --release exec --no-startup-id ~/.config/rofi/scripts/alt.sh
+bindsym $mod+e exec --no-startup-id i3-sensible-terminal
+
+bindsym $mod+f fullscreen disable; floating toggle
+bindsym $mod+Ctrl+f floating disable; fullscreen toggle
+bindsym $mod+Shift+f focus mode_toggle
+
+floating_modifier $mod
+bindsym --whole-window $mod+button2 kill
+bindsym --whole-window $mod+button3 fullscreen disable; floating toggle
+bindsym --whole-window $mod+Ctrl+button3 floating disable; fullscreen toggle
+bindsym --whole-window $mod+button4 resize grow width 25 px or 10 ppt; resize grow height 25 px or 10 ppt
+bindsym --whole-window $mod+button5 resize shrink width 25 px or 10 ppt; resize shrink height 25 px or 10 ppt
+
+bindsym --release Print exec --no-startup-id "maim -Blsu --color=0,0,0,0.75 | xclip -selection clipboard -t image/png"
 bindsym $mod+Print exec --no-startup-id "maim -Bu -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
-bindsym $mod+Ctrl+Print exec --no-startup-id 'maim -u | xclip -selection clipboard -t image/png'
-
-# floating_modifier $mod
-# bindsym --whole-window $mod+button2 kill
-# bindsym --whole-window $mod+button3 floating toggle
-# bindsym --whole-window $mod+Ctrl+button3 fullscreen toggle
-# bindsym --whole-window $mod+button4 resize grow width 25 px or 10 ppt; resize grow height 25 px or 10 ppt
-# bindsym --whole-window $mod+button5 resize shrink width 25 px or 10 ppt; resize shrink height 25 px or 10 ppt
+bindsym $mod+Ctrl+Print exec --no-startup-id "maim -u | xclip -selection clipboard -t image/png"
 
 bindsym $mod+Left focus left; split h
 bindsym $mod+Down focus down; split v

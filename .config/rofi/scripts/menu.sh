@@ -5,4 +5,4 @@ for arg in "$@"; do
 done
 
 echo $(printf "$options" | rofi -dmenu -i -p '' \
-	-theme-str "window { width: $(printf \"$options\" | wc -L)%; }")
+	-theme-str "window { width: $(printf "$options" | wc -L)%; }")

@@ -1,4 +1,4 @@
-wal -Rn
+wal -nqtR
 feh --no-fehbg --bg-fill ~/.cache/background.png
 
 resolution="$(xrandr | grep \* | awk 'NR==1{print $1}')"

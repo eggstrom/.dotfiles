@@ -15,7 +15,7 @@ if [[ -n "$option" ]]; then
 			~/.cache/background.png
 	fi
 
-	wal -ni "$image"
+	wal -nqti "$image"
 	feh --no-fehbg --bg-fill ~/.cache/background.png
 
 	mv ~/.cache/wal/alacritty.yml ~/.config/alacritty/alacritty.yml

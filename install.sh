@@ -34,13 +34,13 @@ if [[ "$confirmation" = 'Y' || "$confirmation" = 'y' ]]; then
 	if [[ "$install_method" = '1' ]]; then
 		echo 'Copying files...'
 		for file in ${files[@]}; do
-			echo "$PWD/$file to $HOME/$file"
+			cp "$PWD/$file" "$HOME/$file"
 		done
 		echo 'The files have been copied, you can delete this directory.'
 	else
 		echo 'Creating symlinks to files...'
 		for file in ${files[@]}; do
-			echo "$HOME/$file -> $PWD/$file"
+			ln -sf "$HOME/$file" "$PWD/$file"
 		done
 		echo 'The symlinks have been created. The configuration will stop working if you delete this directory.'
 	fi

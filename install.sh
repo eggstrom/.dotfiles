@@ -22,7 +22,7 @@ done
 if [[ ${#overwritten_files[@]} > 0 ]]; then
 	echo 'If you proceed with the installation, the following files will be overwritten:'
 	for file in ${overwritten_files[@]}; do
-		echo " - $HOME/$file"
+		echo " - $file"
 	done
 	echo -n 'Would you still like to proceed? [Y/N]: '
 	read confirmation

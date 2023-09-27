@@ -1,9 +1,10 @@
 # i3 config file (v4)
 
-set_from_resource $gaps i3.gaps 0
 set_from_resource $border i3.border 2
+set_from_resource $fontsize i3.fontsize 16
+set_from_resource $gaps i3.gaps 0
 
-font pango:JetBrains Mono Nerd Font 16
+font pango:JetBrains Mono Nerd Font $fontsize
 gaps inner $gaps
 default_border pixel $border
 default_floating_border pixel $border

@@ -2,7 +2,7 @@ window:
   opacity: 0.75
 
 font:
-  size: 15
+  size: $fontsize
   normal:
     family: JetBrains Mono Nerd Font
     style: Regular

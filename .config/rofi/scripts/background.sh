@@ -17,5 +17,7 @@ if [[ -n "$option" ]]; then
 
 	wal -ni "$image"
 	feh --no-fehbg --bg-fill ~/.cache/background.png
+
 	mv ~/.cache/wal/alacritty.yml ~/.config/alacritty/alacritty.yml
+	sed -i "s/\$fontsize/$(xrdb -query | grep -F 'i3.fontsize' | cut -f2)/" ~/.config/alacritty/alacritty.yml
 fi

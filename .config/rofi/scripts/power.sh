@@ -7,6 +7,6 @@ case "$option" in
 	'Exit') i3-msg exit ;;
 	'Shut Down') systemctl poweroff ;;
 	'Reboot') systemctl reboot ;;
-	'Suspend') systemctl suspend ;;
-	'Hibernate') systemctl hibernate ;;
+	'Suspend') i3lock -ui ~/.cache/background.png; systemctl suspend ;;
+	'Hibernate') i3lock -ui ~/.cache/background.png; systemctl hibernate ;;
 esac

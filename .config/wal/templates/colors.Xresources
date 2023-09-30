@@ -68,4 +68,3 @@ XClock*secondColor: rgba:{color15.xrgba}
 URxvt*depth: 32
 
 *background-transparent: #c0{background.strip}
-*wallpaper: {wallpaper}

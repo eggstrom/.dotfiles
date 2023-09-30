@@ -1,10 +1,8 @@
 * {{
-    background: {background}c0;
-    foreground: {foreground};
-    border: {color2};
-}}
+	background: {background}c0;
+	foreground: {foreground};
+	border: {color2};
 
-* {{
 	font: "JetBrains Mono Nerd Font $fontsize";
 	background-color: #00000000;
 	text-color: @foreground;

@@ -8,6 +8,6 @@ height="$(echo $resolution | cut -dx -f2)"
 echo "i3.border: $(expr $height / 500)" | xrdb -merge
 echo "i3.fontsize: $(expr $width / 160)" | xrdb -merge
 echo "i3.gaps: $(expr $height / 50)" | xrdb -merge
-echo "polybar.font: JetBrains Mono Nerd Font:size=$(expr $width / 125);5" | xrdb -merge
+echo "polybar.font: JetBrains Mono Nerd Font:size=$(expr $width / 125);$(expr $width / 500)" | xrdb -merge
 
 exec i3

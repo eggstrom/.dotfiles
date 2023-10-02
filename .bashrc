@@ -16,5 +16,6 @@ alias ll='ls -lh'
 alias ls='ls -a --color=auto'
 alias pacman='pacman --color=auto'
 alias rm='rm -i'
+alias sudo='sudo '
 
 PS1='[\u@\h \W]\$ '

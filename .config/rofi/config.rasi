@@ -2,7 +2,7 @@
 
 configuration {
 	hover-select: true;
-	kb-cancel: "Escape,Super+q,Control+Super+q,Super+w,Control+Super+w";
+	kb-cancel: "Escape,Super+Escape,Super+q,Super+w,Super+e,Super+b,Super+f,Super+Ctrl+f";
 	me-select-entry: "";
 	me-accept-entry: "MousePrimary,MouseSecondary";
 	window {

@@ -1,10 +1,7 @@
 # i3 config file (v4)
 
-set_from_resource $border i3.border 2
-set_from_resource $fontSize i3.fontSize 16
 set_from_resource $gaps i3.gaps 0
 
-font pango:JetBrains Mono Nerd Font $fontSize
 gaps inner $gaps
 default_border none
 default_floating_border none
@@ -21,9 +18,9 @@ bindsym $mod+w exec --no-startup-id ~/.config/rofi/scripts/main.sh
 bindsym $mod+e exec --no-startup-id i3-sensible-terminal
 bindsym $mod+b exec --no-startup-id ~/.config/rofi/scripts/background.sh
 
-bindsym $mod+space fullscreen disable; floating toggle
-bindsym $mod+Ctrl+space floating disable; fullscreen toggle
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+f fullscreen disable; floating toggle
+bindsym $mod+Ctrl+f floating disable; fullscreen toggle
+bindsym $mod+Shift+f focus mode_toggle
 
 bindsym --release Print exec --no-startup-id "maim -Blsu --color=0,0,0,0.75 | xclip -selection clipboard -t image/png"
 bindsym $mod+Print exec --no-startup-id "maim -Bu -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
@@ -85,19 +82,6 @@ bindsym $mod+Ctrl+9 move container to workspace number $ws9
 bindsym $mod+Ctrl+0 move container to workspace number $ws10
 bindsym $mod+Ctrl+Tab move container to workspace next
 bindsym $mod+Ctrl+Shift+Tab move container to workspace prev
-
-set_from_resource $bg1 background #000000
-set_from_resource $bg2 color2 #00FF00
-set_from_resource $fg foreground #FFFFFF
-
-# class                 border  backgr. text    indicator child_border
-client.focused          $fg     $fg     $bg2    $fg       $fg
-client.focused_inactive $bg2    $bg2    $fg     $bg2      $bg2
-client.unfocused        $bg2    $bg2    $fg     $bg2      $bg2
-client.urgent           $bg2    $bg2    $fg     $bg2      $bg2
-client.placeholder      $bg2    $bg2    $fg     $bg2      $bg2
-
-client.background       $bg1
 
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf
 exec_always --no-startup-id ~/.config/polybar/launch.sh

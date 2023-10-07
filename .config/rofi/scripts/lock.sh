@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-backgroundColor=$(xrdb -query | grep -F 'i3lock.backgroundColor' | cut -f2)
-textColor=$(xrdb -query | grep -F 'i3lock.textColor' | cut -f2)
+background=$(xrdb -query | grep -F 'i3lock.background' | cut -f2)
+foreground=$(xrdb -query | grep -F 'i3lock.foreground' | cut -f2)
+
+echo $background
 
 i3lock --force-clock \
 	--time-font='Jet Brains Mono Nerd Font' \
@@ -17,17 +19,17 @@ i3lock --force-clock \
 	--greeter-text='' \
 	--no-modkey-text \
 	\
-	--time-color="$textColor" \
-	--date-color="$textColor" \
+	--time-color="$foreground" \
+	--date-color="$foreground" \
 	\
-	--inside-color="$backgroundColor" \
-	--insidever-color="$backgroundColor" \
-	--insidewrong-color="$backgroundColor" \
-	--ring-color="$textColor" \
+	--inside-color="$background" \
+	--insidever-color="$background" \
+	--insidewrong-color="$background" \
+	--ring-color="$foreground" \
 	--ringver-color='FFFF00' \
 	--ringwrong-color='FF0000' \
 	\
-	--separator-color="$textColor" \
+	--separator-color="$foreground" \
 	--keyhl-color='00FF00' \
 	--bshl-color='FF0000' \
 	--line-uses-inside \

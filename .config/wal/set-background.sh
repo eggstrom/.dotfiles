@@ -13,7 +13,7 @@ wal -nqti "$1"
 feh --no-fehbg --bg-fill ~/.cache/background.png
 
 mv ~/.cache/wal/alacritty.yml ~/.config/alacritty/alacritty.yml
-sed -i "s/\$fontsize/$(xrdb -query | grep -F 'i3.fontsize' | cut -f2)/" ~/.config/alacritty/alacritty.yml
+sed -i "s/\$fontsize/$(xrdb -query | grep -F 'i3.fontSize' | cut -f2)/" ~/.config/alacritty/alacritty.yml
 
 mv ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/theme.rasi
-sed -i "s/\$fontsize/$(xrdb -query | grep -F 'rofi.fontsize' | cut -f2)/" ~/.config/rofi/theme.rasi
+sed -i "s/\$fontsize/$(xrdb -query | grep -F 'rofi.fontSize' | cut -f2)/" ~/.config/rofi/theme.rasi

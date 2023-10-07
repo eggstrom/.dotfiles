@@ -12,14 +12,14 @@ focus_follows_mouse no
 
 set $mod Mod4
 
-bindsym $mod+q kill
-bindsym $mod+r reload
-bindsym $mod+Ctrl+r restart
-
 bindsym $mod+Escape exec --no-startup-id ~/.config/rofi/scripts/power.sh
+bindsym $mod+F5 reload
+bindsym $mod+Ctrl+F5 restart
+
+bindsym $mod+q kill
 bindsym $mod+w exec --no-startup-id ~/.config/rofi/scripts/main.sh
-bindsym $mod+b exec --no-startup-id ~/.config/rofi/scripts/background.sh
 bindsym $mod+e exec --no-startup-id i3-sensible-terminal
+bindsym $mod+b exec --no-startup-id ~/.config/rofi/scripts/background.sh
 
 bindsym $mod+f fullscreen disable; floating toggle
 bindsym $mod+Ctrl+f floating disable; fullscreen toggle

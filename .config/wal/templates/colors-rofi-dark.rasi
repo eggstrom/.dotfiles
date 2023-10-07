@@ -1,7 +1,6 @@
 * {{
 	background: {background}c0;
 	foreground: {foreground};
-	border: {color2};
 
 	font: "JetBrains Mono Nerd Font $fontsize";
 	background-color: #00000000;
@@ -12,12 +11,10 @@
 window {{
 	width: 33%;
 	background-color: @background;
-	border-color: @border;
-	border: 2px;
 }}
 
 inputbar {{
-	background-color: @border;
+	background-color: @background;
 }}
 
 listview {{
@@ -32,7 +29,7 @@ inputbar, element {{
 
 element selected {{
 	background-color: @foreground;
-	text-color: @border;
+	text-color: @background;
 }}
 
 element-text {{

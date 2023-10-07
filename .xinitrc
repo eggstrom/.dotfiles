@@ -5,7 +5,7 @@ height="$(echo $resolution | cut -dx -f2)"
 echo "i3.fontSize: $(expr $width \* $height / 225000)" | xrdb -merge
 echo "i3.gaps: $(expr $height / 50)" | xrdb -merge
 echo "polybar.font: JetBrains Mono Nerd Font:size=$(expr $width / 125);$(expr $width / 500)" | xrdb -merge
-echo "rofi.fontSize: $(expr $width / 160)" | xrdb -merge
+echo "rofi.fontSize: $(expr $width / 150)" | xrdb -merge
 
 wal -nqtR
 feh --no-fehbg --bg-fill ~/.cache/background.png

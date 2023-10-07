@@ -1,7 +1,6 @@
 -- [[ SETTINGS ]]
 -- Line numbers
 vim.wo.number = true
-vim.wo.relativenumber = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
@@ -12,7 +11,7 @@ vim.o.breakindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+-- vim.o.completeopt = 'menuone,noselect'
 -- Set space as the leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '

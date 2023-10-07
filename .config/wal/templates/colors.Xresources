@@ -68,5 +68,5 @@ XClock*secondColor: rgba:{color15.xrgba}
 URxvt*depth: 32
 
 polybar.background: #e6{background.strip}
-i3lock.background:  {background.strip}e6
+i3lock.background:  {background.strip}
 i3lock.foreground:  {foreground.strip}

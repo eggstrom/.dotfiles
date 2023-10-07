@@ -13,10 +13,6 @@ window {{
 	background-color: @background;
 }}
 
-inputbar {{
-	background-color: @background;
-}}
-
 listview {{
 	lines: 10;
 	columns: 1;

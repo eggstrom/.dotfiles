@@ -5,23 +5,22 @@ let &vicmd = $EDITOR
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
 " solution, it's also much slower when processing large amounts of files and
 " doesn't support progress measuring.
-set syscalls
 
-set trash      " Enable trash
-set ignorecase " Ignore case sensitivity when searching
-set smartcase  " Enable case sensitivity when using capital letters
+set trash         " Enable trash
+set syscalls      " Have Vifm perform its own file operations (Enables showing progress)
+set nofollowlinks " Automatically resolve symbolic links
+set ignorecase    " Ignore case sensitivity when searching
+set smartcase     " Enable case sensitivity when using capital letters
 
 " List of things to remember
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
             \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
+" Set statusline text
 set statusline=' %A %u:%g %T%=%s %E %a/%c '
 
 " This is how many directories to store in the directory history.
 set history=100
-
-" Automatically resolve symbolic links on l or Enter.
-set nofollowlinks
 
 " Natural sort of (version) numbers within text.
 set sortnumbers
@@ -50,7 +49,6 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 
 " Ignore case in search patterns unless it contains at least one uppercase
 " letter
-
 
 " Don't highlight search results automatically
 set nohlsearch
@@ -525,11 +523,6 @@ nnoremap <c-u> <c-w>x
 " Icon decorations example
 " ------------------------------------------------------------------------------
 
-" https://github.com/cirala/vifm_devicons
-
-" Ranger devicons for ViFM
-" https://github.com/cirala/vifm_devicons
-"
 " Filetypes/directories
 set classify=' :dir:/, :exe:, :reg:, :link:,? :?:, ::../::'
 

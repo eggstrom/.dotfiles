@@ -15,5 +15,8 @@ feh --no-fehbg --bg-fill ~/.cache/background.png
 mv ~/.cache/wal/colors-alacritty.yml ~/.config/alacritty/colors.yml
 printf "font:\n  size: $(xrdb -query | grep -F 'alacritty.fontSize' | cut -f2)" > ~/.config/alacritty/font-size.yml
 
-mv ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/colors.rasi
+mv ~/.cache/wal/colors-polybar.ini ~/.config/polybar/colors.ini
+printf "[bar/bar]\nfont-0 = JetBrains Mono Nerd Font:size=$(xrdb -query | grep -F 'polybar.fontSize' | cut -f2)" > ~/.config/polybar/font.ini
+
+mv ~/.cache/wal/colors-rofi.rasi ~/.config/rofi/colors.rasi
 printf "* {\n	font: \"JetBrains Mono Nerd Font $(xrdb -query | grep -F 'rofi.fontSize' | cut -f2)\";\n}" > ~/.config/rofi/font.rasi

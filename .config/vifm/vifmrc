@@ -12,7 +12,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
             \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Set statusline text
-set statusline=' %A %u:%g %T%=%d '
+set statusline=' %A %u:%g %T%= %d '
 set timefmt='%a %b %d/%m/%Y %H:%M:%S'
 
 " This is how many directories to store in the directory history.

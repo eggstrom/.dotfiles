@@ -1,11 +1,6 @@
 " Default programs
 let &vicmd = $EDITOR
 
-" This makes vifm perform file operations on its own instead of relying on
-" standard utilities like `cp`.  While using `cp` and alike is a more universal
-" solution, it's also much slower when processing large amounts of files and
-" doesn't support progress measuring.
-
 set trash         " Enable trash
 set syscalls      " Have Vifm perform its own file operations (Enables showing progress)
 set nofollowlinks " Automatically resolve symbolic links
@@ -37,7 +32,6 @@ set vimhelp
 " press Enter, l or Right Arrow, set this.
 set norunexec
 
-
 " Show list of matches on tab completion in command-line mode
 set wildmenu
 
@@ -47,9 +41,6 @@ set wildstyle=popup
 " Display suggestions in normal, visual and view modes for keys, marks and
 " registers (at most 5 files).  In other view, when available.
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
-
-" Ignore case in search patterns unless it contains at least one uppercase
-" letter
 
 " Don't highlight search results automatically
 set nohlsearch
@@ -516,13 +507,6 @@ nnoremap <c-u> <c-w>x
 "     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
 "
 " let $VIFM_SERVER_NAME = v:servername
-
-" Activate screen/tmux support
-" screen!
-
-" ------------------------------------------------------------------------------
-" Icon decorations example
-" ------------------------------------------------------------------------------
 
 " Filetypes/directories
 set classify=' :dir:/, :exe:, :reg:, :link:,? :?:, ::../::'

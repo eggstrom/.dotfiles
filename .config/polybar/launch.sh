@@ -1,2 +1,4 @@
+#!/usr/bin/env bash
+
 killall -q polybar
-polybar -r bar &!
+polybar -r bar & disown

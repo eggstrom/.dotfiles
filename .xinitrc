@@ -7,7 +7,10 @@ echo "alacritty.fontSize: $(expr $width \* $height / 225000)" | xrdb -merge
 echo "polybar.fontSize: $(expr $width / 125);$(expr $width / 500)" | xrdb -merge
 echo "rofi.fontSize: $(expr $width / 150)" | xrdb -merge
 
-wal -nqtR
-feh --no-fehbg --bg-fill ~/.cache/background.png
+if [[ -f ~/.cache/wal/wal ]]; then
+	~/.config/wal/set-background.sh $(cat ~/.cache/wal/wal)
+else
+	~/.config/wal/set-background.sh ~/Pictures/backgrounds
+fi
 
 exec i3

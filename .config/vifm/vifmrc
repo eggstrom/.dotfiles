@@ -1,9 +1,7 @@
-" Default programs
-let &vicmd = $EDITOR
-
+" Settings
 set trash         " Enable trash
-set syscalls      " Have Vifm perform its own file operations (Enables showing progress)
 set nofollowlinks " Automatically resolve symbolic links
+set syscalls      " Have Vifm perform its own operations (Enables showing progress)
 set ignorecase    " Ignore case sensitivity when searching
 set smartcase     " Enable case sensitivity when using capital letters
 
@@ -11,9 +9,23 @@ set smartcase     " Enable case sensitivity when using capital letters
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
             \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
-" Set statusline text
+" Default programs
+let &vicmd = $EDITOR
+
+" Bookmarks
+mark h ~/
+mark m /run/media
+
+" Status line
 set statusline=' %A %u:%g %T%= %d '
 set timefmt='%a %b %d/%m/%Y %H:%M:%S'
+
+" Colors
+highlight Win ctermbg=none
+highlight TopLine ctermfg=white ctermbg=none
+highlight TopLineSel ctermfg=default ctermbg=none
+highlight Border ctermfg=white ctermbg=none
+highlight CmdLine ctermbg=None
 
 " This is how many directories to store in the directory history.
 set history=100
@@ -55,15 +67,6 @@ set scrolloff=4
 if !has('win')
     set slowfs=curlftpfs
 endif
-
-" ------------------------------------------------------------------------------
-" Bookmarks
-" ------------------------------------------------------------------------------
-
-" :mark mark /full/directory/path [filename]
-
-mark b ~/bin/
-mark h ~/
 
 " ------------------------------------------------------------------------------
 " Commands

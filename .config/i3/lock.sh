@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-background=$(xrdb -query | grep -F 'background' | cut -f2)
-foreground=$(xrdb -query | grep -F 'foreground' | cut -f2)
+background=$(xrdb -query | grep -F 'background' | head -n1 | cut -f2)
+foreground=$(xrdb -query | grep -F 'foreground' | head -n1 | cut -f2)
 
 i3lock -ec '00000000' \
 	\

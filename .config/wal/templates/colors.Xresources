@@ -1,2 +1,2 @@
-background: {background.strip}
-foreground: {foreground.strip}
+background: {background}
+foreground: {foreground}

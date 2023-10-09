@@ -9,4 +9,4 @@ printf "[bar/bar]\nfont-0 = JetBrains Mono Nerd Font:size=$(xrdb -query | grep -
 touch ~/.config/polybar/config.ini
 
 mv ~/.cache/wal/colors-rofi.rasi ~/.config/rofi/colors.rasi
-printf "* {\n	font: \"JetBrains Mono Nerd Font $(xrdb -query | grep -F 'rofi.fontSize' | cut -f2)\";\n}" > ~/.config/rofi/font.rasi
+printf "* {\n	font: \"JetBrains Mono Nerd Font $(xrdb -query | grep -F 'rofi.fontSize' | cut -f2)\";\n	border: $(xrdb -query | grep -F 'border' | cut -f2);\n}" > ~/.config/rofi/font.rasi

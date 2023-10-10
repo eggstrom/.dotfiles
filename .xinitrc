@@ -9,6 +9,10 @@ echo "alacritty.fontSize: $(expr $width \* $height / 225000)"                   
 echo "rofi.fontSize:      $(expr $width / 150)"                                                    | xrdb -merge
 echo "polybar.font:       JetBrains Mono Nerd Font:size=$(expr $width / 125);$(expr $width / 500)" | xrdb -merge
 
+# Generate config files that determine font size
+printf "font:\n  size: $(xrdb -query | grep -F 'alacritty.fontSize' | cut -f2)" > ~/.config/alacritty/font-size.yml
+printf "* {\n	font: \"JetBrains Mono Nerd Font $(xrdb -query | grep -F 'rofi.fontSize' | cut -f2)\";\n	border: $(xrdb -query | grep -F 'border' | cut -f2);\n}" > ~/.config/rofi/font.rasi
+
 # If background was set, reset it
 [[ -f ~/.cache/wal/wal ]] && ~/.config/wal/set-background.sh $(cat ~/.cache/wal/wal)
 

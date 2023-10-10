@@ -1,2 +1,3 @@
 background: {background}
 foreground: {foreground}
+polybar.background: E6{background.strip}

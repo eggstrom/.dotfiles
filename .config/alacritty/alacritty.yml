@@ -2,6 +2,9 @@ import:
   - ~/.config/alacritty/colors.yml
   - ~/.config/alacritty/font-size.yml
 
+window:
+  opacity: 0.9
+
 font:
   normal:
     family: JetBrains Mono Nerd Font

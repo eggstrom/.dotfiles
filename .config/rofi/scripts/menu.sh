@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 for arg in "$@"; do
-	options+=$(echo "$arg" | awk '{printf "%s\\n", $0}')
+	options+="$arg\n"
 done
 
 echo $(printf "$options" | rofi -dmenu -i -p '' \

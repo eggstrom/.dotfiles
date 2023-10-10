@@ -1,4 +1,4 @@
-@import "colors.rasi"
+@import "~/.config/themes/current/colors-rofi.rasi"
 @import "font.rasi"
 
 * {

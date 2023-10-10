@@ -3,6 +3,7 @@
 wal -qntsei "$1"
 feh --no-fehbg --bg-fill --force-aliasing "$1"
 
+mkdir ~/.config/themes/Wal
 mv ~/.cache/wal/alacritty.yml ~/.cache/wal/rofi.rasi ~/.config/themes/Wal
 cp ~/.cache/wal/colors.Xresources ~/.config/themes/Wal
 

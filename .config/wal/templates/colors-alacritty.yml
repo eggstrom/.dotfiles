@@ -6,7 +6,7 @@ colors:
     background: '{background}'
     foreground: '{foreground}'
   cursor:
-    text: '{foreground}'
+    text: CellForeground
     cursor: '{cursor}'
   normal:
     black: '{color0}'

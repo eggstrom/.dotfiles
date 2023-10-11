@@ -16,7 +16,7 @@ printf "* {\n	font: \"JetBrains Mono Nerd Font $(xrdb -query | grep -F 'rofi.fon
 # If background was set, reset it
 [[ -f ~/.cache/wal/wal ]] && ~/.config/wal/set-background.sh $(cat ~/.cache/wal/wal)
 
-# Set theme if it's not already set and load colors into Xresources
+# Set theme if it's not already set and reload colors
 [[ ! -a ~/.config/themes/current ]] && \
 	themes=($(ls -d ~/.config/themes/*/)) && \
 	ln -s "${themes[0]}" ~/.config/themes/current

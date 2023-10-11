@@ -1,5 +1,5 @@
-@import "~/.config/themes/current/rofi.rasi"
 @import "font.rasi"
+@import "colors.rasi"
 
 * {
 	background-color: #00000000;

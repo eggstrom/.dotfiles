@@ -1,6 +1,6 @@
 import:
   - ~/.config/alacritty/font-size.yml
-  - ~/.config/themes/current/alacritty.yml
+  - ~/.config/alacritty/colors.yml
 
 window:
   opacity: 0.9

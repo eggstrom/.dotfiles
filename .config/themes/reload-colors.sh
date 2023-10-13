@@ -2,33 +2,38 @@
 
 # Get colors
 colors=$(cat ~/.config/themes/current/colors)
-background=$(printf "$colors" | grep '^background: ' | cut -d' ' -f2)
-foreground=$(printf "$colors" | grep '^foreground: ' | cut -d' ' -f2)
-cursor=$(printf "$colors" | grep '^cursor: ' | cut -d' ' -f2)
-color0=$(printf "$colors" | grep '^color0: ' | cut -d' ' -f2)
-color1=$(printf "$colors" | grep '^color1: ' | cut -d' ' -f2)
-color2=$(printf "$colors" | grep '^color2: ' | cut -d' ' -f2)
-color3=$(printf "$colors" | grep '^color3: ' | cut -d' ' -f2)
-color4=$(printf "$colors" | grep '^color4: ' | cut -d' ' -f2)
-color5=$(printf "$colors" | grep '^color5: ' | cut -d' ' -f2)
-color6=$(printf "$colors" | grep '^color6: ' | cut -d' ' -f2)
-color7=$(printf "$colors" | grep '^color7: ' | cut -d' ' -f2)
-color8=$(printf "$colors" | grep '^color8: ' | cut -d' ' -f2)
-color9=$(printf "$colors" | grep '^color9: ' | cut -d' ' -f2)
-color10=$(printf "$colors" | grep '^color10: ' | cut -d' ' -f2)
-color11=$(printf "$colors" | grep '^color11: ' | cut -d' ' -f2)
-color12=$(printf "$colors" | grep '^color12: ' | cut -d' ' -f2)
-color13=$(printf "$colors" | grep '^color13: ' | cut -d' ' -f2)
-color14=$(printf "$colors" | grep '^color14: ' | cut -d' ' -f2)
-color15=$(printf "$colors" | grep '^color15: ' | cut -d' ' -f2)
+background=$(printf "$colors" | grep '^background:' | cut -d' ' -f2)
+foreground=$(printf "$colors" | grep '^foreground:' | cut -d' ' -f2)
+cursor=$(    printf "$colors" | grep '^cursor:'     | cut -d' ' -f2)
+color0=$(    printf "$colors" | grep '^color0:'     | cut -d' ' -f2)
+color1=$(    printf "$colors" | grep '^color1:'     | cut -d' ' -f2)
+color2=$(    printf "$colors" | grep '^color2:'     | cut -d' ' -f2)
+color3=$(    printf "$colors" | grep '^color3:'     | cut -d' ' -f2)
+color4=$(    printf "$colors" | grep '^color4:'     | cut -d' ' -f2)
+color5=$(    printf "$colors" | grep '^color5:'     | cut -d' ' -f2)
+color6=$(    printf "$colors" | grep '^color6:'     | cut -d' ' -f2)
+color7=$(    printf "$colors" | grep '^color7:'     | cut -d' ' -f2)
+color8=$(    printf "$colors" | grep '^color8:'     | cut -d' ' -f2)
+color9=$(    printf "$colors" | grep '^color9:'     | cut -d' ' -f2)
+color10=$(   printf "$colors" | grep '^color10:'    | cut -d' ' -f2)
+color11=$(   printf "$colors" | grep '^color11:'    | cut -d' ' -f2)
+color12=$(   printf "$colors" | grep '^color12:'    | cut -d' ' -f2)
+color13=$(   printf "$colors" | grep '^color13:'    | cut -d' ' -f2)
+color14=$(   printf "$colors" | grep '^color14:'    | cut -d' ' -f2)
+color15=$(   printf "$colors" | grep '^color15:'    | cut -d' ' -f2)
 
 # Load colors into Xresources
-echo "background: #$background"          | xrdb -merge
-echo "foreground: #$foreground"          | xrdb -merge
-echo "polybar.background: E6$background" | xrdb -merge
+cat << END | xrdb -merge
+background:         #$background
+foreground:         #$foreground
+i3lock.green:       $color10
+i3lock.red:         $color9
+i3lock.yellow:      $color11
+polybar.background: E6$background
+END
 
 # Create Alacritty colors file
-cat > ~/.config/alacritty/colors.yml << EOF
+cat > ~/.config/alacritty/colors.yml << END
 colors:
   primary:
     background: '#$background'
@@ -54,15 +59,15 @@ colors:
     magenta: '#$color13'
     cyan:    '#$color14'
     white:   '#$color15'
-EOF
+END
 
 # Create Rofi colors file
-cat > ~/.config/rofi/colors.rasi << EOF
+cat > ~/.config/rofi/colors.rasi << END
 * {
 	background: #${background}E6;
 	foreground: #$foreground;
 }
-EOF
+END
 
 # Reload programs
 i3-msg reload

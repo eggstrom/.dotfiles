@@ -6,8 +6,6 @@ green=$(     xrdb -query | grep '^i3lockGreen:'  | head -n1 | cut -f2)
 red=$(       xrdb -query | grep '^i3lockRed:'    | head -n1 | cut -f2)
 yellow=$(    xrdb -query | grep '^i3lockYellow:' | head -n1 | cut -f2)
 
-echo "$green, $red, $yellow"
-
 i3lock -ec '00000000' \
 	\
 	--inside-color="${background}E6" \

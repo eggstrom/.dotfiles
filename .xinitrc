@@ -33,8 +33,8 @@ END
 [[ -f ~/.cache/wal/wal ]] && \
 	~/.config/wal/set-background.sh $(cat ~/.cache/wal/wal)
 
-# Reload colors
-~/.config/theme/reload-colors.sh
+# Reset theme
+~/.config/theme/set-theme.sh
 
 # Start i3
 exec i3

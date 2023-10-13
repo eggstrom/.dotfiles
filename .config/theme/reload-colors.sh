@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Set theme if it's not already set
+[[ ! -a ~/.config/theme/themes/current ]] && \
+	themes=($(ls ~/.config/theme/themes)) && \
+	ln -s "${themes[0]}" ~/.config/theme/themes/current
+
 # Get colors
 colors=$(cat ~/.config/theme/themes/current)
 background=$(printf "$colors" | grep -Po '(?<=^background:).*' | sed 's/^\s*//')

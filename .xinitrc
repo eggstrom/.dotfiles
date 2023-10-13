@@ -30,13 +30,11 @@ cat > ~/.config/rofi/font.rasi << END
 END
 
 # If background was set, reset it
-[[ -f ~/.cache/wal/wal ]] && ~/.config/wal/set-background.sh $(cat ~/.cache/wal/wal)
+[[ -f ~/.cache/wal/wal ]] && \
+	~/.config/wal/set-background.sh $(cat ~/.cache/wal/wal)
 
-# Set theme if it's not already set and reload colors
-[[ ! -a ~/.config/themes/current ]] && \
-	themes=($(ls -d ~/.config/themes/*/)) && \
-	ln -s "${themes[0]}" ~/.config/themes/current
-~/.config/themes/reload-colors.sh
+# Reload colors
+~/.config/theme/reload-colors.sh
 
 # Start i3
 exec i3

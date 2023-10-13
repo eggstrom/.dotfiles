@@ -5,8 +5,8 @@ if [[ -v 1 ]]; then
 	ln -sf "$HOME/.config/theme/themes/$1" ~/.config/theme/current
 elif [[ ! -a ~/.config/theme/current ]]; then
 	themes=($(ls ~/.config/theme/themes)) && \
-	ln -s "${themes[0]}" ~/.config/theme/current
-fi;
+	ln -s "$HOME/.config/theme/themes/${themes[0]}" ~/.config/theme/current
+fi
 
 # Get colors
 colors=$(cat ~/.config/theme/current)

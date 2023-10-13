@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-background=$(xrdb -query | grep '^background:'    | head -n1 | cut -f2)
-foreground=$(xrdb -query | grep '^foreground:'    | head -n1 | cut -f2)
-green=$(     xrdb -query | grep '^i3lock.green:'  | head -n1 | cut -f2)
-red=$(       xrdb -query | grep '^i3lock.red:'    | head -n1 | cut -f2)
-yellow=$(    xrdb -query | grep '^i3lock.yellow:' | head -n1 | cut -f2)
+background=$(xrdb -query | grep '^background:'   | head -n1 | cut -f2)
+foreground=$(xrdb -query | grep '^foreground:'   | head -n1 | cut -f2)
+green=$(     xrdb -query | grep '^i3lockGreen:'  | head -n1 | cut -f2)
+red=$(       xrdb -query | grep '^i3lockRed:'    | head -n1 | cut -f2)
+yellow=$(    xrdb -query | grep '^i3lockYellow:' | head -n1 | cut -f2)
 
 echo "$green, $red, $yellow"
 

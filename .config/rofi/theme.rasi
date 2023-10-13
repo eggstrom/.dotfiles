@@ -3,20 +3,20 @@
 
 * {
 	background-color: #00000000;
-	text-color: @foreground;
-	spacing: 0;
+	text-color:       @foreground;
+	spacing:          0;
 }
 
 window {
-	width: 33%;
+	width:            33%;
 	background-color: @background;
-	border: @border;
-	border-color: @foreground;
+	border:           @border;
+	border-color:     @foreground;
 }
 
 listview {
-	lines: 10;
-	columns: 1;
+	lines:        10;
+	columns:      1;
 	fixed-height: false;
 }
 
@@ -26,7 +26,7 @@ inputbar, element {
 
 element selected {
 	background-color: @foreground;
-	text-color: @background;
+	text-color:       @background;
 }
 
 element-text {

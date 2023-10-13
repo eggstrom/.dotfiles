@@ -24,12 +24,12 @@ color15=$(   printf "$colors" | grep '^color15:'    | cut -d' ' -f2)
 
 # Load colors into Xresources
 cat << END | xrdb -merge
-background:         #$background
-foreground:         #$foreground
-i3lock.green:       $color10
-i3lock.red:         $color9
-i3lock.yellow:      $color11
-polybar.background: E6$background
+background:        #$background
+foreground:        #$foreground
+i3lockGreen:       $color10
+i3lockRed:         $color9
+i3lockYellow:      $color11
+polybarBackground: E6$background
 END
 
 # Create Alacritty colors file

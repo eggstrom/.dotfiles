@@ -17,5 +17,5 @@ for theme in "${!themes[@]}"; do
 done
 options=$(printf "$options" | sort)
 
-option=$(~/.config/rofi/scripts/menu.sh "${options}")
+option=$(~/.config/rofi/scripts/menu.sh "$options")
 [[ -n "$option" ]] && ~/.config/theme/set-theme.sh "${themes[$option]}"

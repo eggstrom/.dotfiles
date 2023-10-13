@@ -6,9 +6,10 @@ declare -A themes=(
 	['Catppuccin Macchiato']='catppuccin-macchiato'
 	['Catppuccin Mocha']='catppuccin-mocha'
 	['Dracula']='dracula'
-	['Gruvbox Dark']='gruvbox-dark'
-	['Gruvbox Light']='gruvbox-light'
-	['Wal']='wal'
+	['Gruvbox (Dark)']='gruvbox-dark'
+	['Gruvbox (Light)']='gruvbox-light'
+	['Wal (Dark)']='wal-dark'
+	['Wal (Light)']='wal-light'
 )
 
 for theme in "${!themes[@]}"; do
@@ -17,4 +18,4 @@ done
 options=$(printf "$options" | sort)
 
 option=$(~/.config/rofi/scripts/menu.sh "${options}")
-[[ -n "$option" ]] && ~/.config/themes/set-theme.sh "${themes[$option]}"
+[[ -n "$option" ]] && ~/.config/theme/set-theme.sh "${themes[$option]}"

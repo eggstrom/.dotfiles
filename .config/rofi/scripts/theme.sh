@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
 declare -A themes=(
-	['Catppuccin Frappe']='catppuccin-frappe'
+	['Catppuccin Frappé']='catppuccin-frappe'
 	['Catppuccin Latte']='catppuccin-latte'
 	['Catppuccin Macchiato']='catppuccin-macchiato'
 	['Catppuccin Mocha']='catppuccin-mocha'
 	['Dracula']='dracula'
 	['Gruvbox (Dark)']='gruvbox-dark'
 	['Gruvbox (Light)']='gruvbox-light'
+	['Rosé Pine']='rose-pine'
+	['Rosé Pine Dawn']='rose-pine-dawn'
+	['Rosé Pine Moon']='rose-pine-moon'
 	['Wal (Dark)']='wal-dark'
 	['Wal (Light)']='wal-light'
 )

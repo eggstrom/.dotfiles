@@ -29,11 +29,8 @@ cat > ~/.config/rofi/font.rasi << END
 }
 END
 
-# If background was set, reset it
-[[ -f ~/.cache/wal/wal ]] && \
-	~/.config/wal/set-background.sh $(cat ~/.cache/wal/wal)
-
-# Reset theme
+# Reload background and theme
+~/.config/wal/set-background.sh
 ~/.config/theme/set-theme.sh
 
 # Start i3

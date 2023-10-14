@@ -23,15 +23,21 @@ done
 options=$(printf "$options" | sort)
 
 # Get index of current theme
-readarray -t optionsArray <<< "$options"
-current="$(basename "$(readlink ~/.config/theme/current)")"
 i=0
-for theme in "${optionsArray[@]}"; do
-	[[ "${themes[$theme]}" == "$current" ]] && break;
-	((i=i+1))
-done
-echo "$i"
+if [[ -a ~/.config/theme/current ]]; then
+	current="$(basename "$(readlink ~/.config/theme/current)")"
+	readarray -t optionsArray <<< "$options"
+
+	for theme in "${optionsArray[@]}"; do
+		[[ "${themes[$theme]}" == "$current" ]] && break;
+		((i=i+1))
+	done
+fi
 
 # Prompt user to pick theme and set it if one was chosen
-option=$(printf "$options" | rofi -dmenu -no-custom -i -p '' -selected-row "$i")
+option=$(printf "$options" |
+	rofi -dmenu -no-custom -i -p '' -selected-row "$i" -theme-str "
+	window { width: $(($(printf "$options" | wc -L)+3))ch; }
+	element-text { horizontal-align: 0.5; }"
+)
 [[ -n "$option" ]] && ~/.config/theme/set-theme.sh "${themes[$option]}"

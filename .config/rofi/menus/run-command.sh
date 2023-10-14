@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 case "$1" in
-	'discord') discord --disable-smooth-scrolling ;;
+	'discord') "$1" --disable-smooth-scrolling ;;
 	*) exec "$1" ;;
 esac

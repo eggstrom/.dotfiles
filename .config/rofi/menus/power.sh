@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-option=$(~/.config/rofi/scripts/menu.sh 'Lock\nExit\nShut Down\nReboot\nSuspend\nHibernate')
+option=$(printf 'Lock\nExit\nShut Down\nReboot\nSuspend\nHibernate' |
+	rofi -dmenu -theme-str "
+	mainbox { children: [listview]; }
+	window { width: 12ch; }
+	element-text { horizontal-align: 0.5; }"
+)
 
 case "$option" in
 	'Lock')	~/.config/i3/lock.sh ;;

@@ -7,6 +7,7 @@ declare -A themes=(
 	['Catppuccin Macchiato']='catppuccin-macchiato'
 	['Catppuccin Mocha']='catppuccin-mocha'
 	['Challenger Deep']='challenger-deep'
+	['Cyberpunk Neon']='cyberpunk-neon'
 	['Dracula']='dracula'
 	['Gruvbox (Dark)']='gruvbox-dark'
 	['Gruvbox (Light)']='gruvbox-light'

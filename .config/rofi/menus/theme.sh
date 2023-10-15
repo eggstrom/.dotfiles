@@ -2,20 +2,27 @@
 
 # Define names and files for themes
 declare -A themes=(
+	['Carbonfox']='carbonfox'
 	['Catppuccin Frappé']='catppuccin-frappe'
 	['Catppuccin Latte']='catppuccin-latte'
 	['Catppuccin Macchiato']='catppuccin-macchiato'
 	['Catppuccin Mocha']='catppuccin-mocha'
 	['Challenger Deep']='challenger-deep'
 	['Cyberpunk Neon']='cyberpunk-neon'
+	['Dawnfox']='dawnfox'
+	['Dayfox']='dayfox'
 	['Dracula']='dracula'
+	['Duskfox']='duskfox'
 	['Gruvbox (Dark)']='gruvbox-dark'
 	['Gruvbox (Light)']='gruvbox-light'
+	['Nightfox']='nightfox'
+	['Nordfox']='nordfox'
 	['Rosé Pine']='rose-pine'
 	['Rosé Pine Dawn']='rose-pine-dawn'
 	['Rosé Pine Moon']='rose-pine-moon'
 	['Wal (Dark)']='wal-dark'
 	['Wal (Light)']='wal-light'
+	['Terafox']='terafox'
 )
 
 # Create sorted list of themes

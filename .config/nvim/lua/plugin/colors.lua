@@ -1,1 +1,4 @@
-return { 'Mofiqul/dracula.nvim' }
+return {
+	'catppuccin/nvim',
+	as = 'catppuccin'
+}

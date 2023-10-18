@@ -21,17 +21,16 @@ font:
   size: $alacrittyFontSize
 END
 
-# Create Rofi config that determines font size and border width
-cat > ~/.config/rofi/font.rasi << END
+# Create Rofi config that determines font and border width
+cat > ~/.config/rofi/font-and-border.rasi << END
 * {
 	font:   "JetBrains Mono Nerd Font $rofiFontSize";
 	border: $border;
 }
 END
 
-# Reload background and theme
-~/.config/wal/set-background.sh
-~/.config/theme/set-theme.sh
+# Reload background
+~/.fehbg
 
 # Start i3
 exec i3

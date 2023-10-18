@@ -1,8 +1,6 @@
 # Load values from Xresources
 set_from_resource $gaps gaps 0
 set_from_resource $border border 1
-set_from_resource $bg background #000000
-set_from_resource $fg foreground #FFFFFF
 
 # General settings
 gaps inner $gaps
@@ -11,6 +9,9 @@ default_floating_border pixel $border
 focus_follows_mouse no
 
 # Colors
+set $bg #1E1E2E
+set $fg #CDD6F4
+
 client.focused          $fg $bg $fg $fg $fg
 client.focused_inactive $fg $bg $fg $fg $fg
 client.unfocused        $fg $bg $fg $fg $fg
@@ -30,7 +31,6 @@ bindsym $mod+s split toggle
 bindsym $mod+w exec --no-startup-id ~/.config/rofi/menus/run.sh
 bindsym $mod+e exec --no-startup-id i3-sensible-terminal
 bindsym $mod+b exec --no-startup-id ~/.config/rofi/menus/background.sh
-bindsym $mod+t exec --no-startup-id ~/.config/rofi/menus/theme.sh
 
 # Floating/fullscreen toggle binds
 bindsym $mod+f fullscreen disable; floating toggle

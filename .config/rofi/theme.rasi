@@ -1,7 +1,9 @@
-@import "font.rasi"
-@import "colors.rasi"
+@import "font-and-border.rasi"
 
 * {
+	background: #1E1E2E;
+	foreground: #CDD6F4;
+
 	background-color: #00000000;
 	text-color:       @foreground;
 	spacing:          0;

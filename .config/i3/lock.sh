@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-background=$(xrdb -query | grep '^background:'   | cut -f2)
-foreground=$(xrdb -query | grep '^foreground:'   | cut -f2)
-green=$(     xrdb -query | grep '^i3lockGreen:'  | cut -f2)
-red=$(       xrdb -query | grep '^i3lockRed:'    | cut -f2)
-yellow=$(    xrdb -query | grep '^i3lockYellow:' | cut -f2)
+background='1E1E2E'
+foreground='CDD6F4'
+green='A6E3A1'
+red='F38BA8'
+yellow='F9E2AF'
 
 i3lock -ec '00000000' \
 	\
-	--inside-color="${background}E6" \
-	--insidever-color="${background}E6" \
-	--insidewrong-color="${background}E6" \
+	--inside-color="$background" \
+	--insidever-color="$background" \
+	--insidewrong-color="$background" \
 	\
 	--ring-color="$foreground" \
 	--ringver-color="$yellow" \

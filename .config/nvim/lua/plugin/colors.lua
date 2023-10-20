@@ -1,4 +1,4 @@
 return {
 	'catppuccin/nvim',
-	as = 'catppuccin'
+	name = 'catppuccin'
 }

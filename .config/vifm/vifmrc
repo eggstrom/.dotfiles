@@ -12,6 +12,43 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 " Default programs
 let &vicmd = $EDITOR
 
+" :com[mand][!] command_name action
+"
+" These are some of the macros that can be used in the action part:
+"  %a for user arguments
+"  %c for current file under the cursor
+"  %C for current file under the cursor of inactive pane
+"  %f for selected file(s)
+"  %F for selected file(s) of inactive pane
+"  %b is the same as %f %F
+"  %d for current directory name
+"  %D for current directory name of inactive pane
+"  %r{x} for list of files in register {x}
+"  %m runs the command in a menu window
+"  %u uses command's output to build a file list
+"  see `:help vifm-macros` and `:help vifm-filename-modifiers` for more
+
+com! df df -h %m 1> /dev/null
+com! diff vim -d %f %F
+com! zip zip -r %c.zip %f
+com! run !! ./%f
+com! make !!make %a
+com! mkcd :mkdir %a | cd %a
+com! vgrep vim "+grep %a"
+com! reload :write | restart full
+
+" Commands for setting background
+com! bgcenter   feh --bg-center --force-aliasing %c
+com! bgfill     feh --bg-fill   --force-aliasing %c
+com! bgmax      feh --bg-max    --force-aliasing %c
+com! bgscale    feh --bg-scale  --force-aliasing %c
+com! bgtile     feh --bg-tile   --force-aliasing %c
+com! bgcenteraa feh --bg-center %c
+com! bgfillaa   feh --bg-fill   %c
+com! bgmaxaa    feh --bg-max    %c
+com! bgscaleaa  feh --bg-scale  %c
+com! bgtileaa   feh --bg-tile   %c
+
 " Bookmarks
 mark h ~/
 mark m /run/media
@@ -68,35 +105,6 @@ if !has('win')
     set slowfs=curlftpfs
 endif
 
-" ------------------------------------------------------------------------------
-" Commands
-" ------------------------------------------------------------------------------
-
-" :com[mand][!] command_name action
-"
-" These are some of the macros that can be used in the action part:
-"  %a for user arguments
-"  %c for current file under the cursor
-"  %C for current file under the cursor of inactive pane
-"  %f for selected file(s)
-"  %F for selected file(s) of inactive pane
-"  %b is the same as %f %F
-"  %d for current directory name
-"  %D for current directory name of inactive pane
-"  %r{x} for list of files in register {x}
-"  %m runs the command in a menu window
-"  %u uses command's output to build a file list
-"  see `:help vifm-macros` and `:help vifm-filename-modifiers` for more
-
-command! df df -h %m 2> /dev/null
-command! diff vim -d %f %F
-command! zip zip -r %c.zip %f
-command! run !! ./%f
-command! make !!make %a
-command! mkcd :mkdir %a | cd %a
-command! vgrep vim "+grep %a"
-command! reload :write | restart full
-command! bg feh --bg-fill --force-aliasing %c
 
 " ------------------------------------------------------------------------------
 " File types association

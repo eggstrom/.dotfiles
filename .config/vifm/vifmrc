@@ -60,8 +60,8 @@ com! bgtileaa   feh --bg-tile   %c
 " Bookmarks
 mark r /
 mark h ~/
-mark d ~/Downloads
-mark D ~/Documents
+mark D ~/Downloads
+mark d ~/Documents
 mark p ~/Pictures
 mark m ~/Music
 mark v ~/Videos

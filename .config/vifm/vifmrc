@@ -63,8 +63,9 @@ mark h ~/
 mark d ~/Downloads
 mark D ~/Documents
 mark p ~/Pictures
+mark m ~/Music
 mark v ~/Videos
-mark m /run/media
+mark M /run/media
 
 " Status line
 set statusline=' %A %u:%g %T%= %d '

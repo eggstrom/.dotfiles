@@ -1,3 +1,5 @@
+xrdb ~/.Xresources
+
 resolution="$(xrandr | grep \* | awk 'NR==1{print $1}')"
 width="$(echo $resolution | cut -dx -f1)"
 height="$(echo $resolution | cut -dx -f2)"

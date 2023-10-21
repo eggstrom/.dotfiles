@@ -28,14 +28,22 @@ let &vicmd = $EDITOR
 "  %u uses command's output to build a file list
 "  see `:help vifm-macros` and `:help vifm-filename-modifiers` for more
 
+" Default commands
 com! df df -h %m 1> /dev/null
 com! diff vim -d %f %F
-com! zip zip -r %c.zip %f
 com! run !! ./%f
 com! make !!make %a
 com! mkcd :mkdir %a | cd %a
 com! vgrep vim "+grep %a"
 com! reload :write | restart full
+
+" Commands for archiving
+"com! tar 
+"com! untar 
+"com! gzip 
+"com! ungzip 
+com! zip zip -r %c.zip %f
+com! unzip unzip -d %a %c 
 
 " Commands for setting background
 com! bgcenter   feh --bg-center --force-aliasing %c
@@ -50,7 +58,12 @@ com! bgscaleaa  feh --bg-scale  %c
 com! bgtileaa   feh --bg-tile   %c
 
 " Bookmarks
+mark r /
 mark h ~/
+mark d ~/Downloads
+mark D ~/Documents
+mark p ~/Pictures
+mark v ~/Videos
 mark m /run/media
 
 " Status line

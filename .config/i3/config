@@ -36,9 +36,9 @@ bindsym $mod+Ctrl+f  floating disable;   fullscreen toggle
 bindsym $mod+Shift+f focus mode_toggle
 
 # Screenshot binds
-bindsym --release Print exec --no-startup-id "maim -Blsu --color=0,0,0,0.75 | xclip -selection clipboard -t image/png"
+bindsym --release Print exec --no-startup-id "maim -Blsu --color=0,0,0,0.75         | xclip -selection clipboard -t image/png"
 bindsym $mod+Print      exec --no-startup-id "maim -B -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
-bindsym $mod+Ctrl+Print exec --no-startup-id "maim | xclip -selection clipboard -t image/png"
+bindsym $mod+Ctrl+Print exec --no-startup-id "maim                                  | xclip -selection clipboard -t image/png"
 
 # Mouse binds
 floating_modifier $mod

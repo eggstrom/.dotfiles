@@ -5,8 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[[ -f ~/.cargo/env ]] && . ~/.cargo/env
-
 export BROWSER='firefox'
 export EDITOR='nvim'
 export GTK_THEME='Catppuccin-Mocha-Standard-Red-Dark'

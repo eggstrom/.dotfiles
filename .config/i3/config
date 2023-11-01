@@ -101,6 +101,6 @@ bindsym $mod+Ctrl+Tab       move container to workspace next
 bindsym $mod+Ctrl+Shift+Tab move container to workspace prev
 
 # Programs to start automatically
-exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id nm-applet

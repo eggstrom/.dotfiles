@@ -1,5 +1,5 @@
 -- empty setup using defaults
-require("nvim-tree").setup()
+require('nvim-tree').setup()
 
 -- OR setup with some options
 -- require("nvim-tree").setup({
@@ -11,3 +11,5 @@ require("nvim-tree").setup()
 -- 		group_empty = true,
 -- 	},
 -- })
+
+vim.keymap.set('n', '<leader>t', ':NvimTreeOpen<CR>')

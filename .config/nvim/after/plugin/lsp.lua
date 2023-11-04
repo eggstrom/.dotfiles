@@ -7,19 +7,19 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-		'bashls',        -- Bash
-		'clangd',        -- C, C++
-		'cssls',         -- CSS
-		'html',          -- HTML
-		'jsonls',        -- JSON
-		'lemminx',       -- XML
-		'lua_ls',        -- Lua
-		'pylsp',         -- Python
-		'rust_analyzer', -- Rust
-		'taplo',         -- TOML
-		'tsserver',      -- JavaScript, TypeScript
-		'vimls',         -- VimL
-		'yamlls'         -- YAML
+        'bashls',        -- Bash
+        'clangd',        -- C, C++
+        'cssls',         -- CSS
+        'html',          -- HTML
+        'jsonls',        -- JSON
+        'lemminx',       -- XML
+        'lua_ls',        -- Lua
+        'pylsp',         -- Python
+        'rust_analyzer', -- Rust
+        'taplo',         -- TOML
+        'tsserver',      -- JavaScript, TypeScript
+        'vimls',         -- VimL
+        'yamlls'         -- YAML
     },
     handlers = {
         lsp_zero.default_setup,

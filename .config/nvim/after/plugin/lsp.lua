@@ -11,6 +11,7 @@ require('mason-lspconfig').setup({
         'clangd',        -- C, C++
         'cssls',         -- CSS
         'html',          -- HTML
+        'jdtls',         -- Java
         'jsonls',        -- JSON
         'lemminx',       -- XML
         'lua_ls',        -- Lua
@@ -19,7 +20,7 @@ require('mason-lspconfig').setup({
         'taplo',         -- TOML
         'tsserver',      -- JavaScript, TypeScript
         'vimls',         -- VimL
-        'yamlls'         -- YAML
+        'yamlls',        -- YAML
     },
     handlers = {
         lsp_zero.default_setup,

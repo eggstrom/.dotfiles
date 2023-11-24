@@ -6,7 +6,7 @@ gaps="$(expr $height / 50)"
 border="$(expr $(expr $height / 480) \| 1)"
 alacrittyFontSize="$(expr $width \* $height / 225000)"
 rofiFontSize="$(expr $width / 150)"
-polybarFont="JetBrains Mono Nerd Font:size=$(expr $width / 125);$(expr $width / 500)"
+polybarFont="JetBrains Mono NF:size=$(expr $width / 125);$(expr $width / 500)"
 
 # Load values into Xresources
 cat << END | xrdb -merge
@@ -24,7 +24,7 @@ END
 # Create Rofi config that determines font and border width
 cat > ~/.config/rofi/font-and-border.rasi << END
 * {
-	font:   "JetBrains Mono Nerd Font $rofiFontSize";
+	font:   "JetBrains Mono NF $rofiFontSize";
 	border: $border;
 }
 END

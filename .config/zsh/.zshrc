@@ -1,6 +1,10 @@
 # Source .zshenv if it exists
 [[ -f ~/.zshenv ]] && . ~/.zshenv
 
+# Append paths to PATH variable
+typeset -U path PATH
+path+="$HOME/.cargo/bin"
+
 # Aliases
 alias aria2c='aria2c -d Downloads'
 alias grep='grep --color=auto'

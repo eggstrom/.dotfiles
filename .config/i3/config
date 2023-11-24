@@ -42,9 +42,11 @@ bindsym $mod+Ctrl+Print exec --no-startup-id "maim                              
 
 # Mouse binds
 floating_modifier $mod
-bindsym --whole-window $mod+button2 kill
-bindsym --whole-window $mod+button4 workspace next
-bindsym --whole-window $mod+button5 workspace prev
+bindsym --whole-window $mod+button2      kill
+bindsym --whole-window $mod+button4      workspace next
+bindsym --whole-window $mod+button5      workspace prev
+bindsym --whole-window $mod+Ctrl+button4 move container to workspace next
+bindsym --whole-window $mod+Ctrl+button5 move container to workspace prev
 
 # Binds for moving within a workspace
 bindsym $mod+Left  focus left

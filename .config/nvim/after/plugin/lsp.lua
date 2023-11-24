@@ -15,7 +15,7 @@ require('mason-lspconfig').setup({
         'jsonls',        -- JSON
         'lemminx',       -- XML
         'lua_ls',        -- Lua
-        'pylsp',         -- Python
+        'pyright',       -- Python
         'rust_analyzer', -- Rust
         'taplo',         -- TOML
         'tsserver',      -- JavaScript, TypeScript

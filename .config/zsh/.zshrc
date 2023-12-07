@@ -6,7 +6,8 @@ typeset -U path PATH
 path+="$HOME/.cargo/bin"
 
 # Aliases
-alias aria2c='aria2c -d Downloads'
+alias aria2c="aria2c -d $HOME/Downloads"
+alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ll='ls -lh'
 alias ls='ls -a --color=auto'

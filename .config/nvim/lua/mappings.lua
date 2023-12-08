@@ -1,5 +1,8 @@
-local builtin = require('telescope.builtin')
+-- Tree
+vim.keymap.set('n', '<leader>t', require('nvim-tree.api').tree.open)
 
+-- Telescope
+local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>fa', builtin.builtin, {})    -- All
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})  -- Help
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})    -- Buffers

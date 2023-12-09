@@ -29,10 +29,7 @@ require('lazy').setup({
         branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
-    'nvim-lualine/lualine.nvim', -- Status line
-    'mawkler/modicator.nvim',    -- Change line number color based on mode
-
-    {                            -- Treesitter
+    { -- Treesitter
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
         build = ':TSUpdate',
@@ -55,11 +52,14 @@ require('lazy').setup({
         'kevinhwang91/nvim-ufo',
         dependencies = 'kevinhwang91/promise-async',
     },
+    'nvim-lualine/lualine.nvim', -- Status line
+    'mawkler/modicator.nvim',    -- Change line number color based on mode
 })
 
 -- Configure plugins
 require('plugins.colorscheme')
 require('plugins.treesitter')
 require('plugins.lsp')
+require('plugins.folds')
 require('plugins.statusline')
 require('plugins.misc')

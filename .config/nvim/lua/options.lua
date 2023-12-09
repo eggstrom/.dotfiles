@@ -11,11 +11,18 @@ vim.o.ignorecase = true               -- Disable case-sensitive searching
 vim.o.smartcase = true                -- Enable case-sensitive searching when using caps
 vim.o.completeopt = 'menuone,preview' -- Show completion menu even if there's only 1 match
 
--- Tab options
+-- Tab character
 vim.o.expandtab = true -- Replace tab with spaces
 vim.o.softtabstop = 4  -- Number of spaces in tab
 vim.o.tabstop = 4      -- Width of tab
 vim.o.shiftwidth = 4   -- Width of an indentation level
+
+-- Folds (TODO: Enable fold column when PR #17446 gets merged)
+vim.o.foldlevel = 99   -- Keep folds open by default
+vim.o.foldcolumn = '0' -- Width of fold column
+
+-- Fill chars
+vim.o.fillchars = 'foldopen:,foldclose:,foldsep: '
 
 -- Leader key
 vim.g.mapleader = ' '

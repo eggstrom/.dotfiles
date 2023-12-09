@@ -1,10 +1,17 @@
--- File tree
-require('nvim-tree').setup()
-
--- Indentation guide
-require('ibl').setup({
-    scope = { enabled = false, },
-})
-
--- Change line number color based on mode
-require('modicator').setup()
+return {
+    {
+        'lukas-reineke/indent-blankline.nvim',
+        main = 'ibl',
+        config = function()
+            require('ibl').setup({
+                scope = { enabled = false, },
+            })
+        end,
+    },
+    {
+        'mawkler/modicator.nvim',
+        config = function()
+            require('modicator').setup()
+        end,
+    },
+}

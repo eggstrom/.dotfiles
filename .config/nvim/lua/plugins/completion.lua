@@ -41,18 +41,30 @@ return {
                 completion = cmp.config.window.bordered({ border = 'single' }),
                 documentation = cmp.config.window.bordered({ border = 'single' }),
             },
-            mapping = cmp.mapping.preset.insert({
+            mapping = {
                 ['<C-Space>'] = cmp.mapping.complete(),
-                ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace }),
                 ['<Tab>'] = select_next_item,
                 ['<S-Tab>'] = select_prev_item,
                 ['<Down>'] = select_next_item,
                 ['<Up>'] = select_prev_item,
+                ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace }),
+                ['<C-q>'] = cmp.mapping.abort(),
+                ['<C-d>'] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        if not cmp.visible_docs() then
+                            cmp.mapping.open_docs()
+                        else
+                            cmp.mapping.close_docs()
+                        end
+                    else
+                        fallback()
+                    end
+                end, { 'i', 's' }),
                 ['<C-j>'] = cmp.mapping.scroll_docs(4),
                 ['<C-k>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-Down>'] = cmp.mapping.scroll_docs(4),
                 ['<C-Up>'] = cmp.mapping.scroll_docs(-4),
-            }),
+            },
         })
     end,
 }

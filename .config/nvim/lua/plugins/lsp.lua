@@ -7,10 +7,8 @@ return {
         'folke/neodev.nvim',
     },
     config = function()
-        require('mason').setup()
+        require('mason').setup({ ui = { border = 'single' } })
         require('mason-lspconfig').setup({ automatic_installation = true, })
-        local lspconfig = require('lspconfig')
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
         require('neodev').setup()
 
         vim.keymap.set('n', '<space>d', vim.diagnostic.open_float)
@@ -48,6 +46,9 @@ return {
                 end, opts)
             end,
         })
+
+        local lspconfig = require('lspconfig')
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         lspconfig.bashls.setup({})  -- Bash
         lspconfig.clangd.setup({})  -- C, C++

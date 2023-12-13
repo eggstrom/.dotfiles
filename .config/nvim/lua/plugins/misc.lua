@@ -2,16 +2,13 @@ return {
     {
         'lukas-reineke/indent-blankline.nvim',
         main = 'ibl',
-        config = function()
-            require('ibl').setup({
-                scope = { enabled = false, },
-            })
-        end,
+        opts = {
+            indent = { char = '│' },
+            scope = { show_start = false, show_end = false, },
+        },
     },
     {
         'mawkler/modicator.nvim',
-        config = function()
-            require('modicator').setup()
-        end,
+        opts = {},
     },
 }

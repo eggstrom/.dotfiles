@@ -20,21 +20,20 @@ vim.o.shiftwidth = 4   -- Width of an indentation level
 -- Folds (TODO: Enable fold column when PR #17446 gets merged)
 vim.o.foldlevel = 99   -- Keep folds open by default
 vim.o.foldcolumn = '0' -- Width of fold column
-
--- Fill characters
-vim.opt.fillchars = {
-    -- Window separators
---     horiz     = ' ',
---     horizup   = ' ',
---     horizdown = ' ',
---     vert      = ' ',
---     vertleft  = ' ',
---     vertright = ' ',
-    -- Fold column
+vim.opt.fillchars = {  -- Characters in fold column
     foldopen  = '',
     foldclose = '',
     foldsep   = ' ',
 }
+
+-- Enable borders on windows
+vim.diagnostic.config({ float = { border = 'single' } })
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+    vim.lsp.handlers.hover, { border = 'single', }
+)
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+    vim.lsp.handlers.signature_help, { border = 'single', }
+)
 
 -- Leader key
 vim.g.mapleader = ' '

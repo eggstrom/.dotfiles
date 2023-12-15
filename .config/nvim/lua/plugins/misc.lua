@@ -4,7 +4,7 @@ return {
         main = 'ibl',
         opts = {
             indent = { char = '│' },
-            scope = { show_start = false, show_end = false, },
+            scope = { show_start = false, show_end = false },
         },
     },
     {

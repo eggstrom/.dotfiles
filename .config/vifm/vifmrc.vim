@@ -65,6 +65,7 @@ mark d ~/Documents
 mark p ~/Pictures
 mark m ~/Music
 mark v ~/Videos
+mark c ~/.config
 mark M /run/media
 
 " Status line
@@ -255,7 +256,7 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {View in shotwell}
         \ shotwell,
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ identify %f
+         \ wezterm imgcat %f
 
 " OpenRaster
 filextype *.ora
@@ -386,7 +387,7 @@ filextype */
 " fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
 
 " Displaying pictures in terminal
-" fileviewer *.jpg,*.png shellpic %c
+" fileviewer *.jpg,*.png wezterm imgcat %c
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide

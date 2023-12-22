@@ -2,14 +2,15 @@
 export ZDOTDIR="$HOME/.config/zsh"
 export POWERLEVEL9K_CONFIG_FILE="$HOME/.config/zsh/.p10k.zsh"
 export XINITRC="$HOME/.config/xinitrc"
+export MYVIFMRC="$HOME/.config/vifm/vifmrc.vim"
 
 # History
-export HISTFILE="$HOME/.cache/histfile"
+export HISTFILE="$ZDOTDIR/.zhistory"
 export HISTSIZE=1000
 export SAVEHIST=1000
 
 # Default programs
-export TERM='alacritty'
+export TERM='wezterm'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export BROWSER='firefox'

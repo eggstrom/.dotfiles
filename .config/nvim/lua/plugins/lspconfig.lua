@@ -1,10 +1,10 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
         "folke/neodev.nvim",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
     },
     config = function()
         vim.keymap.set("n", "<space>d", vim.diagnostic.open_float)
@@ -28,6 +28,9 @@ return {
             vim.keymap.set("n", "<space>r", vim.lsp.buf.rename, opts)
             vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
             vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+            vim.keymap.set("n", "<space>F", function()
+                vim.lsp.buf.format({ async = true })
+            end, opts)
         end
 
         require("lspconfig.ui.windows").default_options.border = "single"

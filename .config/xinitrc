@@ -4,7 +4,6 @@ height="$(echo $resolution | cut -dx -f2)"
 
 gaps="$(expr $height / 50)"
 border="$(expr $(expr $height / 480) \| 1)"
-alacrittyFontSize="$(expr $width \* $height / 225000)"
 rofiFontSize="$(expr $width / 150)"
 polybarFont="JetBrains Mono NF:size=$(expr $width / 125);$(expr $width / 500)"
 
@@ -13,12 +12,6 @@ cat << END | xrdb -merge
 gaps:        $gaps
 border:      $border
 polybarFont: $polybarFont
-END
-
-# Create Alacritty config that determines font size
-cat > ~/.config/alacritty/font-size.yml << END
-font:
-  size: $alacrittyFontSize
 END
 
 # Create Rofi config that determines font and border width

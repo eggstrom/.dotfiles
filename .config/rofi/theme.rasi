@@ -1,7 +1,7 @@
 @import "font-and-border.rasi"
 
 * {
-	background: #1E1E2E;
+	background: #1E1E2EF2;
 	foreground: #CDD6F4;
 
 	background-color: #00000000;

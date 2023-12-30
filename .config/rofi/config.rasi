@@ -1,11 +1,12 @@
-@theme "theme.rasi"
+@theme "themes/power.rasi"
+@theme "themes/run.rasi"
 
 configuration {
-	hover-select: true;
-	kb-cancel: "Escape,Super+Escape,Super+F5,Super+Ctrl+F5,Super+q,Super+s,Super+w,Super+e,Super+f,Super+Ctrl+f,Super+Shift+f";
-	me-select-entry: "";
-	me-accept-entry: "MousePrimary,MouseSecondary";
-	window {
-		hide-active-window: true;
-	}
+    hover-select: true;
+    kb-cancel: "Escape,Super+Escape,Super+F5,Super+Ctrl+F5,Super+q,Super+s,Super+w,Super+e,Super+f,Super+Ctrl+f,Super+Shift+f";
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary,MouseSecondary";
+    window {
+        hide-active-window: true;
+    }
 }

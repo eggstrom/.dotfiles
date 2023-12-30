@@ -1,25 +1,29 @@
-resolution="$(xrandr | grep \* | awk 'NR==1{print $1}')"
-width="$(echo $resolution | cut -dx -f1)"
-height="$(echo $resolution | cut -dx -f2)"
+screen_height="$(
+    xrandr |
+    grep '*' |
+    awk 'NR==1{print $1}' |
+    cut -dx -f2
+)"
 
-gaps="$(expr $height / 50)"
-border="$(expr $(expr $height / 480) \| 1)"
-rofiFontSize="$(expr $width / 150)"
-polybarFont="JetBrains Mono NF:size=$(expr $width / 125);$(expr $width / 500)"
+border=$((screen_height / 300))
+
+export POLYBAR_BORDER="$border"
+export POLYBAR_FONT_TEXT="JetBrains Mono NF:size=$((screen_height / 70));$((screen_height / 275))"
+export POLYBAR_FONT_ICONS="Font Awesome 6 Free Solid:size=$((screen_height / 70));$((screen_height / 275))"
+
+export ROFI_BORDER="$border"
+export ROFI_FONT_POWER="\"Font Awesome 6 Free Solid $((screen_height / 25))\""
+export ROFI_FONT_RUN="\"JetBrains Mono NF $((screen_height / 70))\""
+export ROFI_PADDING_SMALL=$((screen_height / 150))
+export ROFI_PADDING_BIG=$((ROFI_PADDING_SMALL * 2))
+export ROFI_WIDTH_POWER="calc($((2 * (ROFI_BORDER + ROFI_PADDING_BIG) + 12 * ROFI_PADDING_BIG)) + 6em + 0.6%)"
+
+gaps="$((screen_height / 50))"
 
 # Load values into Xresources
 cat << END | xrdb -merge
-gaps:        $gaps
-border:      $border
-polybarFont: $polybarFont
-END
-
-# Create Rofi config that determines font and border width
-cat > ~/.config/rofi/font-and-border.rasi << END
-* {
-	font:   "JetBrains Mono NF $rofiFontSize";
-	border: $border;
-}
+I3_BORDER: $border
+I3_GAPS:   $((screen_height / 50))
 END
 
 # Reload background

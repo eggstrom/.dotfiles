@@ -1,33 +1,32 @@
 # General settings
-set_from_resource $gaps   gaps   0
-set_from_resource $border border 1
+set_from_resource $border I3_BORDER 0
+set_from_resource $gaps I3_GAPS 0
 
+focus_follows_mouse     no
 gaps                    inner $gaps
 default_border          pixel $border
 default_floating_border pixel $border
-focus_follows_mouse     no
 
 # Colors
-set $bg #1E1E2E
-set $fg #CDD6F4
-
-client.focused          $fg $bg $fg $fg $fg
-client.focused_inactive $fg $bg $fg $fg $fg
-client.unfocused        $fg $bg $fg $fg $fg
-client.urgent           $fg $bg $fg $fg $fg
-client.placeholder      $fg $bg $fg $fg $fg
-client.background       $bg
+set $color #CDD6F4
+client.focused          $color $color $color $color $color
+client.focused_inactive $color $color $color $color $color
+client.unfocused        $color $color $color $color $color
+client.urgent           $color $color $color $color $color
+client.placeholder      $color $color $color $color $color
+client.background       $color
 
 # Mod key (Mod1 = Alt, Mod4 = Super)
 set $mod Mod4
 
 # General binds
-bindsym $mod+Escape  exec --no-startup-id ~/.config/rofi/menus/power.sh
+bindsym $mod+Escape  exec --no-startup-id ~/.config/rofi/scripts/power.sh
 bindsym $mod+F5      reload
 bindsym $mod+Ctrl+F5 restart
 bindsym $mod+q       kill
-bindsym $mod+s       split toggle
-bindsym $mod+w       exec --no-startup-id ~/.config/rofi/menus/run.sh
+bindsym $mod+s       split vertical
+bindsym $mod+v       split horizontal
+bindsym $mod+w       exec --no-startup-id ~/.config/rofi/scripts/run.sh
 bindsym $mod+e       exec --no-startup-id i3-sensible-terminal
 
 # Floating/fullscreen toggle binds
@@ -36,9 +35,10 @@ bindsym $mod+Ctrl+f  floating disable;   fullscreen toggle
 bindsym $mod+Shift+f focus mode_toggle
 
 # Screenshot binds
-bindsym --release Print exec --no-startup-id "maim -Blsu --color=0,0,0,0.75         | xclip -selection clipboard -t image/png"
-bindsym $mod+Print      exec --no-startup-id "maim -B -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
-bindsym $mod+Ctrl+Print exec --no-startup-id "maim                                  | xclip -selection clipboard -t image/png"
+bindsym --release Print  exec --no-startup-id "maim -Blsu --color=0,0,0,0.75         | xclip -selection clipboard -t image/png"
+bindsym Ctrl+Print       exec --no-startup-id "maim -B -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
+bindsym Shift+Print      exec --no-startup-id "maim -B -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
+bindsym Ctrl+Shift+Print exec --no-startup-id "maim                                  | xclip -selection clipboard -t image/png"
 
 # Mouse binds
 floating_modifier $mod
@@ -65,44 +65,32 @@ bindsym $mod+Shift+Up    resize shrink height 25 px or 10 ppt
 bindsym $mod+Shift+Right resize grow   width  25 px or 10 ppt
 
 # Binds for moving between workspaces
-set $ws1  "1"
-set $ws2  "2"
-set $ws3  "3"
-set $ws4  "4"
-set $ws5  "5"
-set $ws6  "6"
-set $ws7  "7"
-set $ws8  "8"
-set $ws9  "9"
-set $ws10 "10"
-
-bindsym $mod+1         workspace number $ws1
-bindsym $mod+2         workspace number $ws2
-bindsym $mod+3         workspace number $ws3
-bindsym $mod+4         workspace number $ws4
-bindsym $mod+5         workspace number $ws5
-bindsym $mod+6         workspace number $ws6
-bindsym $mod+7         workspace number $ws7
-bindsym $mod+8         workspace number $ws8
-bindsym $mod+9         workspace number $ws9
-bindsym $mod+0         workspace number $ws10
+bindsym $mod+1         workspace number 1
+bindsym $mod+2         workspace number 2
+bindsym $mod+3         workspace number 3
+bindsym $mod+4         workspace number 4
+bindsym $mod+5         workspace number 5
+bindsym $mod+6         workspace number 6
+bindsym $mod+7         workspace number 7
+bindsym $mod+8         workspace number 8
+bindsym $mod+9         workspace number 9
+bindsym $mod+0         workspace number 10
 bindsym $mod+Tab       workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym $mod+Ctrl+1         move container to workspace number $ws1
-bindsym $mod+Ctrl+2         move container to workspace number $ws2
-bindsym $mod+Ctrl+3         move container to workspace number $ws3
-bindsym $mod+Ctrl+4         move container to workspace number $ws4
-bindsym $mod+Ctrl+5         move container to workspace number $ws5
-bindsym $mod+Ctrl+6         move container to workspace number $ws6
-bindsym $mod+Ctrl+7         move container to workspace number $ws7
-bindsym $mod+Ctrl+8         move container to workspace number $ws8
-bindsym $mod+Ctrl+9         move container to workspace number $ws9
-bindsym $mod+Ctrl+0         move container to workspace number $ws10
+bindsym $mod+Ctrl+1         move container to workspace number 1
+bindsym $mod+Ctrl+2         move container to workspace number 2
+bindsym $mod+Ctrl+3         move container to workspace number 3
+bindsym $mod+Ctrl+4         move container to workspace number 4
+bindsym $mod+Ctrl+5         move container to workspace number 5
+bindsym $mod+Ctrl+6         move container to workspace number 6
+bindsym $mod+Ctrl+7         move container to workspace number 7
+bindsym $mod+Ctrl+8         move container to workspace number 8
+bindsym $mod+Ctrl+9         move container to workspace number 9
+bindsym $mod+Ctrl+0         move container to workspace number 10
 bindsym $mod+Ctrl+Tab       move container to workspace next
 bindsym $mod+Ctrl+Shift+Tab move container to workspace prev
 
-# Programs to start automatically
+# Programs to start with i3
 exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id nm-applet

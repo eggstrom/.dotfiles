@@ -1,0 +1,27 @@
+@import "default.rasi"
+
+* {
+    font: env(ROFI_FONT_POWER, "");
+}
+
+window {
+    width: env(ROFI_WIDTH_POWER, 33%);
+}
+
+mainbox {
+    children: [ listview ];
+}
+
+listview {
+    flow: horizontal;
+    columns: 6;
+    lines: 1;
+}
+
+element {
+    padding: env(ROFI_PADDING_BIG, 0);
+}
+
+element-text {
+    horizontal-align: 0.5;
+}

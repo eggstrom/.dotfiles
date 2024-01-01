@@ -5,7 +5,7 @@
 }
 
 window {
-    width: 33%;
+    width: 25%;
 }
 
 listview {

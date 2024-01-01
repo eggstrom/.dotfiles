@@ -1,11 +1,24 @@
 @import "default.rasi"
 
+configuration {
+    kb-mode-next: "";
+    kb-mode-previous: "";
+    kb-move-word-back: "";
+    kb-move-word-forward: "";
+    kb-page-next: "Control+Down,Control+Right,Page_Down";
+    kb-page-prev: "Control+Left,Control+Up,Page_Up";
+    kb-row-down: "";
+    kb-row-left: "Up";
+    kb-row-right: "Down";
+    kb-row-up: "";
+}
+
 * {
     font: env(ROFI_FONT_POWER, "");
 }
 
 window {
-    width: env(ROFI_WIDTH_POWER, 33%);
+    width: env(ROFI_WIDTH_POWER, 25%);
 }
 
 mainbox {

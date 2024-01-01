@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rofi -show combi -modes combi -combi-modes 'window,run' \
+rofi -modes 'run,window' -show 'run' -theme 'run' \
+    -display-run 'Run: ' -display-window 'Window: ' \
     -no-custom -no-sort -disable-history \
-    -display-combi '' -theme 'run' \
     -run-command "$HOME/.config/rofi/scripts/run-command.sh {cmd}" \

@@ -33,4 +33,18 @@ config.hide_tab_bar_if_only_one_tab = true
 -- Functionality
 config.window_close_confirmation = "NeverPrompt"
 
+-- Mouse binds
+config.mouse_bindings = {
+    {
+        event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+        mods = "CTRL",
+        action = wezterm.action.IncreaseFontSize,
+    },
+    {
+        event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+        mods = "CTRL",
+        action = wezterm.action.DecreaseFontSize,
+    },
+}
+
 return config

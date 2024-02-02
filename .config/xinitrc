@@ -16,6 +16,8 @@ export ROFI_PADDING_SMALL=$((screen_height / 150))
 export ROFI_PADDING_BIG=$((ROFI_PADDING_SMALL * 2))
 export ROFI_WIDTH_POWER="calc($((2 * (ROFI_BORDER + ROFI_PADDING_BIG) + 12 * ROFI_PADDING_BIG)) + 6em + 0.6%)"
 
+export WEZTERM_FONT_SIZE="$font_size"
+
 cat << END | xrdb -merge
 I3_BORDER: $border
 I3_GAPS:   $((screen_height / 50))

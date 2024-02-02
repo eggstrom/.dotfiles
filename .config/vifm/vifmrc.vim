@@ -2,8 +2,10 @@
 set trash         " Enable trash
 set nofollowlinks " Automatically resolve symbolic links
 set syscalls      " Have Vifm perform its own operations (Enables showing progress)
-set ignorecase    " Ignore case sensitivity when searching
-set smartcase     " Enable case sensitivity when using capital letters
+set ignorecase    " Disable case sensitivity
+set smartcase     " Enable case sensitivity when using caps
+set dotdirs=      " Disable .. if directory is not empty
+set nowrap        " Disable wrapping
 
 " List of things to remember
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
@@ -156,6 +158,18 @@ endif
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.  There is also %FOREGROUND, which is useful for entering passwords.
 
+" Video
+fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+           \*.as[fx],*.unknown_video},
+          \<video/*>
+         \ ffprobe -hide_banner -pretty %c 2>&1
+filetype <video/*> mpv %f
+
+" Images
+fileviewer <image/*> wezterm imgcat --width %pw --height %ph %f
+filetype <image/*> feh %f &
+
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c %i, apvlv %c, xpdf %c
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
@@ -194,25 +208,6 @@ fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
           \<audio/*>
          \ ffprobe -hide_banner -pretty %c 2>&1
 
-" Video
-filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-          \*.as[fx],*.unknown_video},
-         \<video/*>
-        \ {View using ffplay}
-        \ ffplay -fs -hide_banner -autoexit %f,
-        \ {View using Dragon}
-        \ dragon %f:p,
-        \ {View using mplayer}
-        \ mplayer %f,
-        \ {Play using mpv}
-        \ mpv --no-video %f,
-fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-           \*.as[fx],*.unknown_video},
-          \<video/*>
-         \ ffprobe -hide_banner -pretty %c 2>&1
-
 " Web
 filextype {*.xhtml,*.html,*.htm},<text/html>
         \ {Open with qutebrowser}
@@ -227,46 +222,6 @@ filetype {*.o},<application/x-object> nm %f | less
 " Man page
 filetype {*.[1-8]},<text/troff> man ./%c
 fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
-
-" Images
-filextype {*.svg,*.svgz},<image/svg+xml>
-        \ {Edit in Inkscape}
-        \ inkscape %f,
-        \ {View in Inkview}
-        \ inkview %f,
-filextype {*.cr2}
-        \ {Open in Darktable}
-        \ darktable %f,
-        \ {Open in RawTherapee}
-        \ rawtherapee %f,
-filextype {*.xcf}
-        \ {Open in GIMP}
-        \ gimp %f,
-filextype {.kra}
-        \ {Open in Krita}
-        \ krita %f,
-filextype {.blend}
-        \ {Open in Blender}
-        \ blender %c,
-filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-        \ {View in sxiv}
-        \ sxiv %f,
-        \ {View in gpicview}
-        \ gpicview %c,
-        \ {View in shotwell}
-        \ shotwell,
-fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ wezterm imgcat %f
-
-" OpenRaster
-filextype *.ora
-        \ {Edit in MyPaint}
-        \ mypaint %f,
-
-" Mindmap
-filextype *.vym
-        \ {Open with VYM}
-        \ vym %f &,
 
 " MD5
 filetype *.md5

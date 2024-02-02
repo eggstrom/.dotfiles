@@ -3,10 +3,10 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "folke/neodev.nvim",
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
     },
     config = function()
+        require("lspconfig.ui.windows").default_options.border = "single"
+
         vim.keymap.set("n", "<space>d", vim.diagnostic.open_float)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
@@ -33,50 +33,36 @@ return {
             end, opts)
         end
 
-        require("lspconfig.ui.windows").default_options.border = "single"
-        require("mason").setup({ ui = { border = "single" } })
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "bashls",               -- Bash
-                "clangd",               -- C, C++
-                "cssls",                -- CSS, SCSS, Less
-                "html",                 -- HTML
-                "jdtls",                -- Java
-                "jedi_language_server", -- Python
-                "jsonls",               -- JSON
-                "lemminx",              -- XML
-                "lua_ls",               -- Lua
-                "rust_analyzer",        -- Rust
-                "taplo",                -- TOML
-                "tsserver",             -- JavaScript, TypeScript
-                "vimls",                -- Vimscript
-                "yamlls",               -- YAML
+        local lspconfig = require("lspconfig")
+        local settings = { capabilities = capabilities, on_attach = on_attach, }
+        lspconfig.bashls.setup(settings)
+        lspconfig.clangd.setup(settings)
+        lspconfig.cssls.setup(settings)
+        lspconfig.html.setup(settings)
+        lspconfig.jdtls.setup(settings)
+        lspconfig.jsonls.setup(settings)
+        lspconfig.lemminx.setup(settings)
+        lspconfig.lua_ls.setup(vim.tbl_extend("force", settings, {
+            settings = {
+                Lua = {
+                    completion = { callSnippet = "Replace" },
+                    runtime = { version = "LuaJIT" },
+                    workspace = {
+                        checkThirdParty = false,
+                        library = { vim.env.VIMRUNTIME },
+                    },
+                },
             },
-            handlers = {
-                function(server_name)
-                    require("lspconfig")[server_name].setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                    })
-                end,
-                ["lua_ls"] = function()
-                    require("neodev").setup()
-                    require("lspconfig").lua_ls.setup({
-                        on_attach = on_attach,
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                completion = { callSnippet = "Replace" },
-                                runtime = { version = "LuaJIT" },
-                                workspace = {
-                                    checkThirdParty = false,
-                                    library = { vim.env.VIMRUNTIME },
-                                },
-                            },
-                        },
-                    })
-                end
-            },
-        })
+            on_init = function()
+                require("neodev").setup()
+            end,
+        }))
+        lspconfig.rnix.setup(settings)
+        lspconfig.pyright.setup(settings)
+        lspconfig.rust_analyzer.setup(settings)
+        lspconfig.taplo.setup(settings)
+        lspconfig.tsserver.setup(settings)
+        lspconfig.vimls.setup(settings)
+        lspconfig.yamlls.setup(settings)
     end,
 }

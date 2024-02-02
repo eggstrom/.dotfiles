@@ -17,8 +17,8 @@ vim.o.tabstop = 4      -- Width of tab
 vim.o.shiftwidth = 4   -- Width of an indentation level
 
 -- Searching
-vim.o.ignorecase = true -- Disable case-sensitivity
-vim.o.smartcase = true  -- Enable case-sensitivity when using caps
+vim.o.ignorecase = true -- Disable case sensitivity
+vim.o.smartcase = true  -- Enable case sensitivity when using caps
 
 -- Folds (TODO: Enable fold column when PR #17446 gets merged)
 vim.o.foldlevel = 99   -- Keep folds open by default

@@ -8,6 +8,7 @@ return {
                 null_ls.builtins.formatting.isort,
                 null_ls.builtins.formatting.prettier,
                 null_ls.builtins.formatting.shfmt,
+                null_ls.builtins.formatting.sql_formatter,
             },
         })
 

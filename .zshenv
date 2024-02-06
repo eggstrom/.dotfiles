@@ -5,7 +5,7 @@ export XINITRC="$HOME/.config/xinitrc"
 export MYVIFMRC="$HOME/.config/vifm/vifmrc.vim"
 
 # History
-export HISTFILE="$ZDOTDIR/.zhistory"
+export HISTFILE="$ZDOTDIR/histfile"
 export HISTSIZE=1000
 export SAVEHIST=1000
 

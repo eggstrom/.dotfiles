@@ -57,8 +57,8 @@ return {
                 require("neodev").setup()
             end,
         }))
-        lspconfig.rnix.setup(settings)
         lspconfig.pyright.setup(settings)
+        lspconfig.rnix.setup(settings)
         lspconfig.rust_analyzer.setup(settings)
         lspconfig.taplo.setup(settings)
         lspconfig.tsserver.setup(settings)

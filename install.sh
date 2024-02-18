@@ -13,7 +13,7 @@ until [[ "$install_method" = '1' || "$install_method" = '2' ]]; do
 	read install_method
 done
 
-files=$(find . -type f ! -path '*/.git/*' ! -name 'README.md' ! -name 'install.sh' | cut -d/ -f2- | sort)
+files=$(find home -type f | cut -d/ -f2- | sort)
 
 for file in ${files[@]}; do
 	[[ -f "$HOME/$file" ]] && overwritten_files+=("$HOME/$file")
@@ -34,17 +34,16 @@ if [[ "$confirmation" = 'Y' || "$confirmation" = 'y' ]]; then
 	if [[ "$install_method" = '1' ]]; then
 		echo 'Copying files...'
 		for file in ${files[@]}; do
-			mkdir -p "$(dirname $HOME/$file)" && cp "$PWD/$file" "$HOME/$file"
+			mkdir -p "$(dirname $HOME/$file)" && cp "$PWD/home/$file" "$HOME/$file"
 		done
 		echo 'The files have been copied, you can delete this directory.'
 	else
 		echo 'Creating symlinks to files...'
 		for file in ${files[@]}; do
-			mkdir -p "$(dirname $HOME/$file)" && ln -sf "$PWD/$file" "$HOME/$file"
+			mkdir -p "$(dirname $HOME/$file)" && ln -sf "$PWD/home/$file" "$HOME/$file"
 		done
 		echo 'The symlinks have been created. The configuration will stop working if you delete this directory.'
 	fi
-
 else
 	echo 'The installation has been aborted.'
 fi

@@ -7,10 +7,12 @@ path+="$HOME/.cargo/bin"
 
 # Aliases
 alias aria2c="aria2c -d $HOME/Downloads"
+alias bat='bat --theme=base16-256'
+alias cat='bat'
 alias diff='diff --color=auto'
+alias e='$EDITOR'
 alias grep='grep --color=auto'
-alias ll='ls -lh'
-alias ls='ls -a --color=auto'
+alias ls='eza -al'
 alias pacman='pacman --color=auto'
 alias rm='rm -i'
 alias sudo='sudo '
@@ -62,7 +64,5 @@ zstyle ':completion:*' menu select # Enable highlight on selected item
 # Source plugins
 . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-. /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-# Source Powerlevel10k config
-[[ -f "$ZDOTDIR/.p10k.zsh" ]] && . "$ZDOTDIR/.p10k.zsh"
+eval "$(starship init zsh)"

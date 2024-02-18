@@ -1,18 +1,32 @@
-# Paths
-export ZDOTDIR="$HOME/.config/zsh"
-export POWERLEVEL9K_CONFIG_FILE="$HOME/.config/zsh/.p10k.zsh"
-export XINITRC="$HOME/.config/xinitrc"
-export MYVIFMRC="$HOME/.config/vifm/vifmrc.vim"
+# XDG directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
-# History
-export HISTFILE="$ZDOTDIR/histfile"
+# Home decluttering
+# .config/
+export XINITRC="$XDG_CONFIG_HOME/xinitrc" # .xinitrc
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"     # .zlogin, .zshrc, ...
+# .cache/
+export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history" # .node_repl_history
+export PYTHON_HISTORY="$XDG_CACHE_HOME/python_history"       # .python_history
+# .local/share/
+export CARGO_HOME="$XDG_DATA_HOME/cargo"        # .cargo/
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle" # .gradle/
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"      # .rustup/
+export WINEPREFIX="$XDG_DATA_HOME/wine"         # .wine/
+
+# Zsh history
+export HISTFILE="$HOME/.cache/zsh_history"
 export HISTSIZE=1000
 export SAVEHIST=1000
 
 # Default programs
-export TERM='wezterm'
 export EDITOR='nvim'
-export VISUAL='nvim'
+export SUDO_EDITOR="$EDITOR"
+export VISUAL="$EDITOR"
+export TERM='wezterm'
 export BROWSER='firefox'
 
 # Theming

@@ -1,0 +1,11 @@
+set hidden
+
+map gh cd
+map gD cd ~/Downloads
+map gd cd ~/Documents
+map gp cd ~/Pictures
+map gm cd ~/Music
+map gv cd ~/Videos
+map gc cd ~/.config
+map gr cd /
+map gM cd /run/media

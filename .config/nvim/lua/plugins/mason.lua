@@ -15,13 +15,14 @@ return {
                 "json-lsp",
                 "lemminx",
                 "lua-language-server",
-                "pyright",
                 "rnix-lsp",
+                "pyright",
                 "rust-analyzer",
                 "taplo",
                 "typescript-language-server",
                 "vim-language-server",
                 "yaml-language-server",
+
                 -- Formatters
                 "black",
                 "isort",
@@ -30,5 +31,7 @@ return {
                 "sql-formatter",
             },
         })
+
+        vim.keymap.set("", "<leader>m", "<cmd>:Mason<CR>")
     end,
 }

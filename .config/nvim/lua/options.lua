@@ -1,7 +1,6 @@
 -- General options
-vim.o.mouse = "a"               -- Enable mouse in all modes
-vim.o.clipboard = "unnamedplus" -- Sync clipboard with OS
-vim.o.undofile = true           -- Save undo history
+vim.o.mouse = "a"     -- Enable mouse in all modes
+vim.o.undofile = true -- Save undo history
 
 -- Appearance
 vim.o.cursorline = true     -- Highlight current line

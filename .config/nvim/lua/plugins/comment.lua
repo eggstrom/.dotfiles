@@ -1,7 +1,9 @@
 return {
     "numToStr/Comment.nvim",
-    opts = {
-        toggler = { block = "gCC" },
-        opleader = { block = "gC" },
-    },
+    config = function()
+        require("Comment").setup({
+            toggler = { block = "gCC" },
+            opleader = { block = "gC" },
+        })
+    end,
 }

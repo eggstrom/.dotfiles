@@ -1,10 +1,10 @@
-local wezterm = require "wezterm"
+local wezterm = require("wezterm")
 local config = {}
 if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
--- Will let WezTerm start if it can't find the shell
+-- WezTerm won't start without this
 config.default_prog = { os.getenv("SHELL") }
 
 -- Appearance
@@ -21,9 +21,9 @@ config.window_padding = {
 config.font = wezterm.font("JetBrains Mono NF")
 config.font_size = 20.0
 config.harfbuzz_features = {
-    "liga=0", -- Disable ligatures
-    "clig=0", -- Disable common ligatures
-    "calt=0", -- Disable contextual alternates
+    "liga=0", -- Ligatures
+    "clig=0", -- Common ligatures
+    "calt=0", -- Contextual alternates
 }
 
 -- Tab bar

@@ -1,3 +1,2 @@
 udiskie &
-exec startx
-exit
+startx

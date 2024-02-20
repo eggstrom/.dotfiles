@@ -1,13 +1,8 @@
 # Source .zshenv
 [[ -f ~/.zshenv ]] && . ~/.zshenv
 
-# Append paths to PATH variable
-typeset -U path PATH
-path+="$HOME/.cargo/bin"
-
 # Aliases
 alias aria2c="aria2c -d $HOME/Downloads"
-alias bat='bat --theme=base16-256'
 alias cat='bat'
 alias diff='diff --color=auto'
 alias e='$EDITOR'
@@ -19,7 +14,8 @@ alias sudo='sudo '
 alias yay='yay --color=auto'
 
 # Options
-setopt autocd # CD by just typing directory
+setopt autocd          # CD by just typing directory
+setopt histignorespace # Don't save command to history if it starts with space
 
 # Key binds
 bindkey '^?'      backward-delete-char  # Backspace
@@ -65,4 +61,5 @@ zstyle ':completion:*' menu select # Enable highlight on selected item
 . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Enable Starship
 eval "$(starship init zsh)"

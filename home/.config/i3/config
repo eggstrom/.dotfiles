@@ -8,13 +8,14 @@ default_border          pixel $border
 default_floating_border pixel $border
 
 # Colors
-set $color #CDD6F4
-client.focused          $color $color $color $color $color
-client.focused_inactive $color $color $color $color $color
-client.unfocused        $color $color $color $color $color
-client.urgent           $color $color $color $color $color
-client.placeholder      $color $color $color $color $color
-client.background       $color
+set $bg #1E1E2E
+set $fg #CDD6F4
+client.focused          $fg $fg $fg $fg $fg
+client.focused_inactive $bg $bg $bg $bg $bg
+client.unfocused        $bg $bg $bg $bg $bg
+client.urgent           $bg $bg $bg $bg $bg
+client.placeholder      $bg $bg $bg $bg $bg
+client.background       $bg
 
 # Mod key (Mod1 = Alt, Mod4 = Super)
 set $mod Mod4

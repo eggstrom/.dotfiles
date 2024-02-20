@@ -6,8 +6,8 @@ vim.o.undofile = true -- Save undo history
 vim.o.cursorline = true     -- Highlight current line
 vim.o.number = true         -- Enable line numbers
 vim.o.relativenumber = true -- Enable relative line numbers
-vim.o.wrap = false          -- Disable wrapping
 vim.o.signcolumn = "yes"    -- Always show sign column
+vim.o.wrap = false          -- Disable wrapping
 
 -- Indentation
 vim.o.expandtab = true -- Replace tab with spaces

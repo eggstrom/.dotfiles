@@ -8,29 +8,38 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # .config/
 export XINITRC="$XDG_CONFIG_HOME/xinitrc" # .xinitrc
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"     # .zlogin, .zshrc, ...
-# .cache/
-export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history" # .node_repl_history
-export PYTHON_HISTORY="$XDG_CACHE_HOME/python_history"       # .python_history
 # .local/share/
 export CARGO_HOME="$XDG_DATA_HOME/cargo"        # .cargo/
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle" # .gradle/
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"      # .rustup/
 export WINEPREFIX="$XDG_DATA_HOME/wine"         # .wine/
+# .local/state/
+export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history" # .node_repl_history
+export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"       # .python_history
 
-# Zsh history
-export HISTFILE="$HOME/.cache/zsh_history"
+# Bash and Zsh history
+export HISTFILE="$XDG_STATE_HOME/histfile"
 export HISTSIZE=1000
-export SAVEHIST=1000
+export SAVEHIST="$HISTSIZE"
 
-# Default programs
-export EDITOR='nvim'
-export SUDO_EDITOR="$EDITOR"
-export VISUAL="$EDITOR"
-export TERM='wezterm'
-export BROWSER='firefox'
+# Consistent colors between terminal and terminal programs
+export BAT_THEME='base16-256'
+export FZF_DEFAULT_OPTS='--color=16'
+eval "$(dircolors)"
 
 # Theming
 export XCURSOR_THEME='Catppuccin-Mocha-Dark-Cursors'
 export XCURSOR_SIZE=48
 export GTK_THEME='Catppuccin-Mocha-Standard-Red-Dark'
 export QT_QPA_PLATFORMTHEME='qt5ct'
+
+# Default programs
+export EDITOR='nvim'
+export SUDO_EDITOR="$EDITOR"
+export VISUAL="$EDITOR"
+
+# Add paths to $PATH if they're not already present
+add_path() {
+    [[ ":$PATH:" != *":$1:"* ]] && PATH="$PATH:$1"
+}
+add_path "$CARGO_HOME/bin"

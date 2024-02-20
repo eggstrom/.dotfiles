@@ -1,5 +1,5 @@
 -- Yank/paste to clipboard
-vim.keymap.set("", "<leader>y", "\"+yy")
+vim.keymap.set("", "<leader>y", "\"+y")
 vim.keymap.set("", "<leader>p", "\"+p")
 
 -- Hide search highlight

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 screen_height="$(xrandr | grep '*' | awk 'NR==1{print $1}' | cut -dx -f2)"
 
 font_text='JetBrains Mono NF'
@@ -18,10 +20,10 @@ export ROFI_WIDTH_POWER="calc($((2 * (ROFI_BORDER + ROFI_PADDING_BIG) + 12 * ROF
 
 export WEZTERM_FONT_SIZE="$font_size"
 
-cat << END | xrdb -merge
+cat << EOF | xrdb -merge
 I3_BORDER: $border
 I3_GAPS:   $((screen_height / 50))
-END
+EOF
 
-~/.fehbg
-exec i3
+"$XDG_STATE_HOME/fehbg"
+i3

@@ -6,10 +6,12 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # Home decluttering
 # .config/
-export XINITRC="$XDG_CONFIG_HOME/xinitrc" # .xinitrc
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"     # .zlogin, .zshrc, ...
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npmrc" # .npmrc
+export XINITRC="$XDG_CONFIG_HOME/xinitrc"             # .xinitrc
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"                 # .zlogin, .zshrc, ...
 # .local/share/
 export CARGO_HOME="$XDG_DATA_HOME/cargo"        # .cargo/
+export GOPATH="$XDG_DATA_HOME/go"               # go/
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle" # .gradle/
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"      # .rustup/
 export WINEPREFIX="$XDG_DATA_HOME/wine"         # .wine/
@@ -43,3 +45,4 @@ add_path() {
     [[ ":$PATH:" != *":$1:"* ]] && PATH="$PATH:$1"
 }
 add_path "$CARGO_HOME/bin"
+add_path "$GOPATH/bin"

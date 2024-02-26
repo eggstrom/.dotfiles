@@ -6,6 +6,7 @@ return {
             options = {
                 component_separators = "│",
                 section_separators = "",
+                disabled_filetypes = { statusline = { "NvimTree" } },
             },
         })
     end,

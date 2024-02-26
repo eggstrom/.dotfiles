@@ -13,7 +13,7 @@ return {
             },
         })
 
-        vim.keymap.set("", "<space>F", function()
+        vim.keymap.set("", "<leader>F", function()
             vim.lsp.buf.format({ async = true })
         end)
     end,

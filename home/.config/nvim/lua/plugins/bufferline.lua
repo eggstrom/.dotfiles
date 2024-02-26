@@ -5,10 +5,10 @@ return {
     config = function()
         require("bufferline").setup({
             options = {
-                mode = "tabs",
-                diagnostics = "nvim_lsp",
-                show_duplicate_prefix = false,
                 always_show_bufferline = false,
+                show_duplicate_prefix = false,
+                diagnostics = "nvim_lsp",
+                offsets = { { filetype = "NvimTree" } },
             }
         })
     end,

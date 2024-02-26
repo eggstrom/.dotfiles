@@ -40,6 +40,7 @@ return {
         lspconfig.bashls.setup(settings)
         lspconfig.clangd.setup(settings)
         lspconfig.cssls.setup(settings)
+        lspconfig.gopls.setup(settings)
         lspconfig.html.setup(settings)
         lspconfig.jdtls.setup(settings)
         lspconfig.jsonls.setup(settings)

@@ -5,7 +5,10 @@ set tabstop 4 # Set tab width
 
 set previewer ~/.config/lf/previewer.sh
 
-# File system shortcuts
+# Remove unnecessary mappings
+map t
+
+# Navigation mappings
 map gh cd
 map gD cd ~/Downloads
 map gd cd ~/Documents
@@ -19,6 +22,12 @@ map gl cd ~/.local
 map gr cd /
 map gM cd /run/media
 
+# Trash mappings
+map tt $trash $f
+map tl !clear; trash-list
+map tr $clear; trash-restore
+map te $clear; trash-empty
+
 # Background mappings
 map bc $~/.config/lf/setbg.sh --bg-center $f
 map bf $~/.config/lf/setbg.sh --bg-fill $f
@@ -31,5 +40,3 @@ map baf $~/.config/lf/setbg.sh --force-aliasing --bg-fill $f
 map bam $~/.config/lf/setbg.sh --force-aliasing --bg-max $f
 map bas $~/.config/lf/setbg.sh --force-aliasing --bg-scale $f
 map bat $~/.config/lf/setbg.sh --force-aliasing --bg-tile $f
-
-# Archive mappings

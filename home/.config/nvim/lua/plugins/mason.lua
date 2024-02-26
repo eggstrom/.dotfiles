@@ -1,37 +1,54 @@
 return {
     "williamboman/mason.nvim",
-    dependencies = { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     config = function()
         require("mason").setup({ ui = { border = "single" } })
-        require("mason-tool-installer").setup({
-            auto_update = true,
-            ensure_installed = {
-                -- LSPs
-                "bash-language-server",
-                "clangd",
-                "css-lsp",
-                "html-lsp",
-                "jdtls",
-                "json-lsp",
-                "lemminx",
-                "lua-language-server",
-                "rnix-lsp",
-                "pyright",
-                "rust-analyzer",
-                "taplo",
-                "typescript-language-server",
-                "vim-language-server",
-                "yaml-language-server",
-
-                -- Formatters
-                "black",
-                "isort",
-                "prettier",
-                "shfmt",
-                "sql-formatter",
-            },
-        })
 
         vim.keymap.set("", "<leader>m", "<cmd>:Mason<CR>")
+
+        local packages = {
+            -- LSPs
+            "bash-language-server",
+            "clangd",
+            "css-lsp",
+            "gopls",
+            "html-lsp",
+            "jdtls",
+            "json-lsp",
+            "lemminx",
+            "lua-language-server",
+            "pyright",
+            "rnix-lsp",
+            "rust-analyzer",
+            "taplo",
+            "typescript-language-server",
+            "vim-language-server",
+            "yaml-language-server",
+
+            -- DAPs
+            "codelldb",
+            "delve",
+
+            -- Formatters
+            "black",
+            "isort",
+            "prettier",
+            "shfmt",
+            "sql-formatter",
+        }
+
+        -- Install and update packages
+        local registry = require("mason-registry")
+        for _, name in ipairs(packages) do
+            local package = registry.get_package(name)
+            if not package:is_installed(name) then
+                package:install()
+            else
+                package:check_new_version(function(success)
+                    if success == true then
+                        package:install()
+                    end
+                end)
+            end
+        end
     end,
 }

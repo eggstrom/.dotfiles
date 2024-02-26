@@ -4,8 +4,8 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
--- WezTerm won't start without this
-config.default_prog = { os.getenv("SHELL") }
+-- Start tmux when opening WezTerm
+-- config.default_prog = { "tmux attach || tmux" }
 
 -- Appearance
 config.color_scheme = "Catppuccin Mocha"
@@ -16,6 +16,15 @@ config.window_padding = {
     top = "0",
     bottom = "0",
 }
+config.inactive_pane_hsb = {
+    hue = 1.0,
+    saturation = 1.0,
+    brightness = 0.5,
+}
+
+-- Tab bar
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 
 -- Font
 config.font = wezterm.font("JetBrains Mono NF")
@@ -26,14 +35,23 @@ config.harfbuzz_features = {
     "calt=0", -- Contextual alternates
 }
 
--- Tab bar
-config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
-
 -- Functionality
 config.window_close_confirmation = "NeverPrompt"
 
--- Mouse binds
+config.keys = {
+    { mods = "CTRL|ALT",   key = "s",         action = wezterm.action.SplitVertical },
+    { mods = "CTRL|ALT",   key = "v",         action = wezterm.action.SplitHorizontal },
+    { mods = "CTRL|ALT", key = "LeftArrow", action = wezterm.action.ActivatePaneDirection("Left") },
+    { mods = "CTRL|ALT", key = "DownArrow", action = wezterm.action.ActivatePaneDirection("Down") },
+    { mods = "CTRL|ALT", key = "UpArrow",   action = wezterm.action.ActivatePaneDirection("Up") },
+    { mods = "CTRL|ALT", key = "DownArrow", action = wezterm.action.ActivatePaneDirection("Right") },
+    { mods = "CTRL|ALT", key = "h",         action = wezterm.action.ActivatePaneDirection("Left") },
+    { mods = "CTRL|ALT", key = "j",         action = wezterm.action.ActivatePaneDirection("Down") },
+    { mods = "CTRL|ALT", key = "k",         action = wezterm.action.ActivatePaneDirection("Up") },
+    { mods = "CTRL|ALT", key = "l",         action = wezterm.action.ActivatePaneDirection("Right") },
+}
+
+-- Ctrl + scroll to change font size
 config.mouse_bindings = {
     {
         event = { Down = { streak = 1, button = { WheelUp = 1 } } },

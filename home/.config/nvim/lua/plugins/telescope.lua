@@ -2,8 +2,8 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
         {
-            'nvim-telescope/telescope-fzf-native.nvim',
-            build = 'make',
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make",
         },
         "nvim-lua/plenary.nvim",
     },
@@ -14,7 +14,7 @@ return {
                 borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
             },
         })
-        require('telescope').load_extension('fzf')
+        require("telescope").load_extension("fzf")
 
         local builtin = require("telescope.builtin")
         vim.keymap.set("", "<leader>fa", builtin.builtin)               -- All

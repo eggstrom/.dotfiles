@@ -33,8 +33,8 @@ configuration {
     kb-custom-8: "";
     kb-custom-9: "";
     kb-delete-entry: "Control+q";
-    kb-element-next: "Tab";
-    kb-element-prev: "ISO_Left_Tab";
+    kb-element-next: "Control+n,Tab";
+    kb-element-prev: "Control+p,ISO_Left_Tab";
     kb-ellipsize: "";
     kb-mode-complete: "";
     kb-mode-next: "Control+Tab";

@@ -44,5 +44,8 @@ export VISUAL="$EDITOR"
 add_path() {
     [[ ":$PATH:" != *":$1:"* ]] && PATH="$PATH:$1"
 }
+
 add_path "$CARGO_HOME/bin"
 add_path "$GOPATH/bin"
+
+unset -f add_path

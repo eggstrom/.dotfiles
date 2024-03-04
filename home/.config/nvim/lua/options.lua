@@ -8,6 +8,7 @@ vim.o.number = true         -- Enable line numbers
 vim.o.relativenumber = true -- Enable relative line numbers
 vim.o.signcolumn = "yes"    -- Always show sign column
 vim.o.wrap = false          -- Disable wrapping
+vim.o.showmode = false      -- Don't show mode in command line
 
 -- Indentation
 vim.o.expandtab = true -- Replace tab with spaces
@@ -27,12 +28,3 @@ vim.opt.fillchars = {  -- Characters in fold column
     foldclose = "",
     foldsep   = " ",
 }
-
--- Enable borders on windows
-vim.diagnostic.config({ float = { border = "single" } })
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover, { border = "single" }
-)
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, { border = "single" }
-)

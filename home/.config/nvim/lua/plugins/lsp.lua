@@ -5,8 +5,6 @@ return {
         "folke/neodev.nvim",
     },
     config = function()
-        require("lspconfig.ui.windows").default_options.border = "single"
-
         vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
@@ -27,7 +25,7 @@ return {
                 end, opts)
                 vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
                 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-                vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+                vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts)
                 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
                 vim.keymap.set("", "<leader>F", function()
                     vim.lsp.buf.format({ async = true })
@@ -67,5 +65,10 @@ return {
         lspconfig.tsserver.setup(settings)
         lspconfig.vimls.setup(settings)
         lspconfig.yamlls.setup(settings)
+        lspconfig.zls.setup(vim.tbl_extend("force", settings, {
+            on_init = function ()
+                vim.g.zig_fmt_autosave = 0
+            end
+        }))
     end,
 }

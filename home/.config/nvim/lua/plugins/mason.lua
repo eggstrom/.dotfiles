@@ -1,7 +1,7 @@
 return {
     "williamboman/mason.nvim",
     config = function()
-        require("mason").setup({ ui = { border = "single" } })
+        require("mason").setup()
 
         vim.keymap.set("", "<leader>m", "<cmd>:Mason<CR>")
 
@@ -23,10 +23,7 @@ return {
             "typescript-language-server",
             "vim-language-server",
             "yaml-language-server",
-
-            -- DAPs
-            "codelldb",
-            "delve",
+            "zls",
 
             -- Formatters
             "black",

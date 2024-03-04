@@ -6,7 +6,10 @@ return {
     config = function()
         require("nvim-tree").setup({
             sync_root_with_cwd = true,
+            view = { width = { max = 30 }, },
+            renderer = { root_folder_label = false },
             filters = { git_ignored = false },
+            diagnostics = { enable = true },
             on_attach = function(bufnr)
                 local api = require("nvim-tree.api")
                 local opts = { buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -32,14 +35,9 @@ return {
                 vim.keymap.set("n", "f", api.live_filter.start, opts)
                 vim.keymap.set("n", "F", api.live_filter.clear, opts)
 
-                -- File opening
+                -- File editing
                 vim.keymap.set("n", "o", api.node.open.no_window_picker, opts)
                 vim.keymap.set("n", "O", api.node.open.edit, opts)
-                vim.keymap.set("n", "s", api.node.open.horizontal, opts)
-                vim.keymap.set("n", "v", api.node.open.vertical, opts)
-                vim.keymap.set("n", "t", api.node.open.tab, opts)
-
-                -- File manipulation
                 vim.keymap.set("n", "a", api.fs.create, opts)
                 vim.keymap.set("n", "r", api.fs.rename, opts)
                 vim.keymap.set("n", "y", api.fs.copy.node, opts)

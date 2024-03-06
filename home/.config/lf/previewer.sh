@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# $1 - File name
-# $2 - Width
-# $3 - Height
-# $4 - Horizontal position
-# $5 - Vertical position
+file="$1"
+# width="$2"
+# height="$3"
+# horiz_pos="$4"
+# vert_pos="$5"
 
-case "$1" in
-    *) bat -p --color always "$1" ;;
+case "$file" in
+    *) bat -p --color always "$file" ;;
 esac

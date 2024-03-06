@@ -40,6 +40,7 @@ return {
         lspconfig.cssls.setup(settings)
         lspconfig.gopls.setup(settings)
         lspconfig.html.setup(settings)
+        lspconfig.intelephense.setup(settings)
         lspconfig.jdtls.setup(settings)
         lspconfig.jsonls.setup(settings)
         lspconfig.lemminx.setup(settings)
@@ -66,7 +67,7 @@ return {
         lspconfig.vimls.setup(settings)
         lspconfig.yamlls.setup(settings)
         lspconfig.zls.setup(vim.tbl_extend("force", settings, {
-            on_init = function ()
+            on_init = function()
                 vim.g.zig_fmt_autosave = 0
             end
         }))

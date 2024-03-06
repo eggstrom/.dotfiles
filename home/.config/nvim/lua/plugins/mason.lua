@@ -12,6 +12,7 @@ return {
             "css-lsp",
             "gopls",
             "html-lsp",
+            "intelephense",
             "jdtls",
             "json-lsp",
             "lemminx",

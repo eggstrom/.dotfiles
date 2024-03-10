@@ -1,5 +1,5 @@
-[[ ! $(pgrep udiskie) ]] && udiskie &
+[[ ! $(pgrep udiskie) ]] &&
+    udiskie &
 
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+[[ -z "$DISPLAY" ]] && [[ "$XDG_VTNR" = '1' ]] &&
     startx
-fi

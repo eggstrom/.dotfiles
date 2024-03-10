@@ -25,7 +25,7 @@ config.hide_tab_bar_if_only_one_tab = true
 
 -- Font
 config.font = wezterm.font("JetBrains Mono NF")
-config.font_size = 20.0
+config.font_size = tonumber(os.getenv("WEZTERM_FONT_SIZE")) or 20
 config.harfbuzz_features = {
     "liga=0", -- Ligatures
     "clig=0", -- Common ligatures
@@ -40,6 +40,7 @@ config.disable_default_key_bindings = true
 config.keys = {
     { mods = "CTRL|SHIFT", key = "c", action = wezterm.action.CopyTo("Clipboard") },
     { mods = "CTRL|SHIFT", key = "v", action = wezterm.action.PasteFrom("Clipboard") },
+    { mods = "CTRL|SHIFT", key = "f", action = wezterm.action.Search("CurrentSelectionOrEmptyString") },
     {
         mods = "ALT",
         key = "c",
@@ -51,8 +52,7 @@ config.keys = {
     { mods = "ALT",       key = "+",         action = wezterm.action.IncreaseFontSize },
     { mods = "ALT",       key = "-",         action = wezterm.action.DecreaseFontSize },
     { mods = "ALT|SHIFT", key = "=",         action = wezterm.action.ResetFontSize },
-    { mods = "ALT",       key = "f",         action = wezterm.action.Search("CurrentSelectionOrEmptyString") },
-    { mods = "ALT",       key = "p",         action = wezterm.action.TogglePaneZoomState },
+    { mods = "ALT",       key = "f",         action = wezterm.action.TogglePaneZoomState },
     { mods = "ALT",       key = "s",         action = wezterm.action.SplitVertical },
     { mods = "ALT",       key = "v",         action = wezterm.action.SplitHorizontal },
     { mods = "ALT",       key = "LeftArrow", action = wezterm.action.ActivatePaneDirection("Left") },

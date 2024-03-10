@@ -23,6 +23,7 @@ export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"       # .python_history
 export HISTFILE="$XDG_STATE_HOME/histfile"
 export HISTSIZE=1000
 export SAVEHIST="$HISTSIZE"
+export HISTCONTROL='ignoreboth:erasedups'
 
 # Consistent colors between terminal and terminal programs
 export BAT_THEME='base16-256'
@@ -39,6 +40,7 @@ export QT_QPA_PLATFORMTHEME='qt5ct'
 export EDITOR='nvim'
 export SUDO_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
+export TERMINAL='wezterm'
 
 # Add paths to $PATH if they're not already present
 add_path() {

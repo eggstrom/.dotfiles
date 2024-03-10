@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-screen_height="$(xrandr | grep '*' | awk 'NR==1{print $1}' | cut -dx -f2)"
+screen_height="$(xrandr | grep '*' | awk 'NR==1{print $1}' | cut -d 'x' -f '2')"
 
 font_text='JetBrains Mono NF'
 font_icons='Font Awesome 6 Free Solid'

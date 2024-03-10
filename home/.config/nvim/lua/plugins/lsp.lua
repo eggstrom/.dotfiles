@@ -31,6 +31,17 @@ return {
                     vim.lsp.buf.format({ async = true })
                 end, opts)
             end,
+            settings = {
+                Lua = {
+                    completion = { callSnippet = "Replace" },
+                    runtime = { version = "LuaJIT" },
+                    workspace = {
+                        checkThirdParty = false,
+                        library = { vim.env.VIMRUNTIME },
+                    },
+                },
+                zls = { enable_autofix = false },
+            },
         }
 
         local lspconfig = require("lspconfig")
@@ -45,16 +56,6 @@ return {
         lspconfig.jsonls.setup(settings)
         lspconfig.lemminx.setup(settings)
         lspconfig.lua_ls.setup(vim.tbl_extend("force", settings, {
-            settings = {
-                Lua = {
-                    completion = { callSnippet = "Replace" },
-                    runtime = { version = "LuaJIT" },
-                    workspace = {
-                        checkThirdParty = false,
-                        library = { vim.env.VIMRUNTIME },
-                    },
-                },
-            },
             on_init = function()
                 require("neodev").setup()
             end,
@@ -69,7 +70,7 @@ return {
         lspconfig.zls.setup(vim.tbl_extend("force", settings, {
             on_init = function()
                 vim.g.zig_fmt_autosave = 0
-            end
+            end,
         }))
     end,
 }

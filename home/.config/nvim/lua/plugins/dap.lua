@@ -13,15 +13,8 @@ return {
         vim.keymap.set("n", "<leader>dr", dap.restart)
         vim.keymap.set("n", "<leader>dt", dap.terminate)
 
-        -- Install and configure adapters
-        require("mason-nvim-dap").setup({
-            ensure_installed = {
-                "codelldb",
-                "delve",
-                "python",
-            },
-            handlers = {},
-        })
+        -- Configure adapters
+        require("mason-nvim-dap").setup({ handlers = {} })
 
         -- Configure DAP UI
         local dapui = require("dapui")

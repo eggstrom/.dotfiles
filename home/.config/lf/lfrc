@@ -1,7 +1,9 @@
 # Options
-set hidden    # Show hidden files
-set icons     # Enable icons
-set tabstop 4 # Set tab width
+set tabstop 4                  # Set tab width
+set hidden                     # Show hidden files
+set icons                      # Enable icons
+set truncatechar "…"           # Change file name truncation char
+set cursorpreviewfmt "\033[7m" # Change look of directory preview
 
 set previewer ~/.config/lf/previewer.sh
 

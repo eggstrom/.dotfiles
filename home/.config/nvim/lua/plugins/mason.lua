@@ -26,6 +26,11 @@ return {
             "yaml-language-server",
             "zls",
 
+            -- DAPs
+            "codelldb",
+            "debugpy",
+            "delve",
+
             -- Formatters
             "black",
             "isort",

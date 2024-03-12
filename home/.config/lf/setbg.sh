@@ -8,4 +8,4 @@ cat <<- EOF > "$XDG_STATE_HOME/fehbg"
     $cmd
 EOF
 
-chmod +x "$XDG_STATE_HOME/fehbg"
+chmod u+x "$XDG_STATE_HOME/fehbg"

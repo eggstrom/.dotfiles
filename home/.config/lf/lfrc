@@ -26,7 +26,7 @@ map gr cd /
 map gM cd /run/media
 
 # Trash mappings
-map tt $trash $f
+map tt $trash $fx
 map tl !clear; trash-list
 map tr $clear; trash-restore
 map te $clear; trash-empty

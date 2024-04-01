@@ -53,6 +53,7 @@ bind_ t 'choose-tree'
 
 # Miscellaneous
 bind_ : 'command-prompt'
+bind_ c 'clear-history'
 bind_ r "source-file $HOME/.config/tmux/tmux.conf"
 
 # TODO: Consider adding all of these

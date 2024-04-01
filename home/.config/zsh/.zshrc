@@ -3,7 +3,6 @@
 
 # Aliases
 alias aria2c="aria2c -d $HOME/Downloads"
-alias cat='bat'
 alias fcd='cd "$(fd -Ht d | fzf)"'
 alias d='eval cd "$(dirs -p | fzf)"'
 alias diff='diff --color=auto'
@@ -18,14 +17,13 @@ alias rm='rm -i'
 alias sudo='sudo '
 alias yay='yay --color=auto'
 
-# Pass expression to Python
-c() {
-    local result="$(python <<< "from math import *; print($*)")" 2> /dev/null
+# Quickly evaluate a Python expression
+py() {
+    local result="$(python <<< "from math import *; from random import *; print($*)")"
     [[ -n "$result" ]] &&
-        echo "$result" ||
-        echo '¯\_(ツ)_/¯'
+        echo "$result"
 }
-alias c='noglob c'
+alias py='noglob py'
 
 # Fuzzy find man pages
 fman() {

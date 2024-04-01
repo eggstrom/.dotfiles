@@ -3,7 +3,7 @@ return {
     config = function()
         require("mason").setup()
 
-        vim.keymap.set("", "<leader>m", "<cmd>:Mason<CR>")
+        vim.keymap.set("", "<leader>m", "<cmd>Mason<CR>")
 
         local packages = {
             -- LSPs

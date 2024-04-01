@@ -51,6 +51,6 @@ return {
             end
         })
 
-        vim.keymap.set("", "<leader>t", "<cmd>:NvimTreeOpen<CR>")
+        vim.keymap.set("", "<leader>t", "<cmd>NvimTreeOpen<CR>")
     end,
 }

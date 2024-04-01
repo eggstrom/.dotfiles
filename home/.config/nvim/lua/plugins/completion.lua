@@ -21,6 +21,12 @@ return {
                     require("luasnip").lsp_expand(args.body)
                 end,
             },
+            formatting = {
+                format = function(_, vim_item)
+                    vim_item.menu = ""
+                    return vim_item
+                end
+            },
         })
 
         cmp.setup.cmdline({ "/", "?" }, {

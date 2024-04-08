@@ -14,7 +14,7 @@ return {
                 end
                 table.insert(new_virt_text, { (" 󰁂 %d"):format(end_lnum - lnum), "MoreMsg" })
                 return new_virt_text
-            end
+            end,
         })
     end,
 }

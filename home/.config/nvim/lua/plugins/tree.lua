@@ -48,7 +48,7 @@ return {
                 vim.keymap.set("n", "p", api.fs.paste, opts)
                 vim.keymap.set("n", "d", api.fs.trash, opts)
                 vim.keymap.set("n", "D", api.fs.remove, opts)
-            end
+            end,
         })
 
         vim.keymap.set("", "<leader>t", "<cmd>NvimTreeOpen<CR>")

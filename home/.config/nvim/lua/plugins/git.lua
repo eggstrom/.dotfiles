@@ -1,7 +1,7 @@
 return {
     "lewis6991/gitsigns.nvim",
     config = function()
-        require("gitsigns").setup({ preview_config = { border = "none" }, })
+        require("gitsigns").setup({ preview_config = { border = "none" } })
 
         vim.keymap.set("", "<leader>gn", "<cmd>Gitsigns next_hunk<CR>")
         vim.keymap.set("", "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>")

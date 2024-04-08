@@ -34,7 +34,7 @@ return {
                                 end
                             end
                             return true
-                        end
+                        end,
                     })
                 end, opts)
             end,

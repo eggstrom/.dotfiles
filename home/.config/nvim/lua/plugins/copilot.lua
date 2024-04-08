@@ -6,9 +6,7 @@ return {
             branch = "canary",
             config = function()
                 vim.g.copilot_enabled = false
-                vim.keymap.set("", "<leader>oh", function()
-                    vim.g.copilot_enabled = not vim.g.copilot_enabled
-                end)
+                set_option_toggle("Copilot", "h", "copilot_enabled", "g")
 
                 require("CopilotChat").setup()
 
@@ -21,6 +19,6 @@ return {
                 vim.keymap.set("", "<leader>hr", "<cmd>CopilotChatReset<CR>")
             end,
         },
-        { "nvim-lua/plenary.nvim" },
+        "nvim-lua/plenary.nvim",
     },
 }

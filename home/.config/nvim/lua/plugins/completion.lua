@@ -11,7 +11,10 @@ return {
         local cmp = require("cmp")
 
         cmp.setup({
-            mapping = cmp.mapping.preset.insert(),
+            mapping = cmp.mapping.preset.insert({
+                ["<C-j>"] = cmp.mapping.scroll_docs(4),
+                ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+            }),
             sources = {
                 { name = "nvim_lsp" },
                 { name = "luasnip" },

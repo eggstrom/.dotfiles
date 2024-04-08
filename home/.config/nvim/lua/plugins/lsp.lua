@@ -5,10 +5,6 @@ return {
         "folke/neodev.nvim",
     },
     config = function()
-        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-
         local settings = {
             capabilities = require("cmp_nvim_lsp").default_capabilities(),
             on_attach = function(ev)
@@ -28,7 +24,18 @@ return {
                 vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts)
                 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
                 vim.keymap.set("", "<leader>F", function()
-                    vim.lsp.buf.format({ async = true })
+                    vim.lsp.buf.format({
+                        async = true,
+                        filter = function(client)
+                            local disabled = { "clangd", "cssls", "html", "jdtls", "jsonls", "tsserver" }
+                            for _, lsp in ipairs(disabled) do
+                                if client.name == lsp then
+                                    return false
+                                end
+                            end
+                            return true
+                        end
+                    })
                 end, opts)
             end,
             settings = {
@@ -51,7 +58,6 @@ return {
         lspconfig.cssls.setup(settings)
         lspconfig.gopls.setup(settings)
         lspconfig.html.setup(settings)
-        lspconfig.intelephense.setup(settings)
         lspconfig.jdtls.setup(settings)
         lspconfig.jsonls.setup(settings)
         lspconfig.lemminx.setup(settings)

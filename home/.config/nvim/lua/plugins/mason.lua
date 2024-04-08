@@ -12,7 +12,6 @@ return {
             "css-lsp",
             "gopls",
             "html-lsp",
-            "intelephense",
             "jdtls",
             "json-lsp",
             "lemminx",
@@ -33,6 +32,7 @@ return {
 
             -- Formatters
             "black",
+            "clang-format",
             "isort",
             "prettier",
             "shfmt",

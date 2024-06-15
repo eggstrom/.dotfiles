@@ -6,6 +6,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # Home decluttering
 # .config/
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"        # .docker
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npmrc" # .npmrc
 export XINITRC="$XDG_CONFIG_HOME/xinitrc"             # .xinitrc
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"                 # .zlogin, .zshrc, ...

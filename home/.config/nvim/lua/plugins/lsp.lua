@@ -27,7 +27,7 @@ return {
                     vim.lsp.buf.format({
                         async = true,
                         filter = function(client)
-                            local disabled = { "clangd", "cssls", "html", "jdtls", "jsonls", "tsserver" }
+                            local disabled = { "cssls", "html", "jdtls", "jsonls", "tsserver" }
                             for _, lsp in ipairs(disabled) do
                                 if client.name == lsp then
                                     return false
@@ -54,8 +54,12 @@ return {
         local lspconfig = require("lspconfig")
 
         lspconfig.bashls.setup(settings)
-        lspconfig.clangd.setup(settings)
+        lspconfig.clangd.setup(vim.tbl_extend("force", settings, {
+            -- Forces offset encoding to prevent warnings
+            cmd = { "clangd", "--offset-encoding=utf-16" },
+        }))
         lspconfig.cssls.setup(settings)
+        lspconfig.dartls.setup(settings)
         lspconfig.gopls.setup(settings)
         lspconfig.html.setup(settings)
         lspconfig.jdtls.setup(settings)

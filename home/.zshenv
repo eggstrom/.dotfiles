@@ -32,9 +32,9 @@ export FZF_DEFAULT_OPTS='--color=16'
 eval "$(dircolors)"
 
 # Theming
-export XCURSOR_THEME='Catppuccin-Mocha-Dark-Cursors'
+export XCURSOR_THEME='catppuccin-mocha-dark-cursors'
 export XCURSOR_SIZE=48
-export GTK_THEME='Catppuccin-Mocha-Standard-Red-Dark'
+export GTK_THEME='catppuccin-mocha-red-standard+default'
 export QT_QPA_PLATFORMTHEME='qt5ct'
 
 # Default programs

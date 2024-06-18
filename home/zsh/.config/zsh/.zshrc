@@ -83,9 +83,10 @@ zle-keymap-select() {
 zle -N zle-keymap-select
 
 # Completion
-autoload -Uz compinit
-compinit
-zstyle ':completion:*' menu select # Enable highlight on selected item
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Make completion case-insensitive
+zstyle ':completion:*' menu select                      # Enable highlight on selected item
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Enable file colors
 
 # Source plugins
 . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

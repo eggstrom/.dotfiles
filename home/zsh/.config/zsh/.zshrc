@@ -84,7 +84,6 @@ zle -N zle-keymap-select
 
 # Completion
 autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Make completion case-insensitive
 zstyle ':completion:*' menu select                      # Enable highlight on selected item
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Enable file colors
 

@@ -34,17 +34,18 @@ fman() {
 }
 
 # Directory options
-setopt AUTO_CD           # Change directory without cd
-setopt AUTO_PUSHD        # Push directory onto stack when changing it
-setopt PUSHD_IGNORE_DUPS # Don't put duplicates in directory stack
+setopt auto_cd           # Change directory without cd
+setopt auto_pushd        # Push directory onto stack when changing it
+setopt pushd_ignore_dups # Don't put duplicates in directory stack
 
 # History options
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_SAVE_NO_DUPS
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_save_no_dups
+setopt share_history
 
 # Key binds
 bindkey '^?'      backward-delete-char  # Backspace

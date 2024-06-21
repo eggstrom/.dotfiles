@@ -44,7 +44,7 @@ export VISUAL="$EDITOR"
 export TERMINAL='wezterm'
 
 # Miscellaneous options
-export FZF_DEFAULT_COMMAND='fd -utf'
+export FZF_DEFAULT_COMMAND='fd -u'
 
 # Add paths to $PATH if they're not already present
 add_path() {

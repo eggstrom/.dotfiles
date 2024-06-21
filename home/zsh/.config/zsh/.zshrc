@@ -47,6 +47,9 @@ setopt hist_ignore_space
 setopt hist_save_no_dups
 setopt share_history
 
+# Miscellaneous options
+setopt globdots # Show hidden files when globbing
+
 # Key binds
 bindkey '^?'      backward-delete-char  # Backspace
 bindkey '^[[3~'   delete-char           # Delete

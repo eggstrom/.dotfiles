@@ -43,6 +43,9 @@ export SUDO_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 export TERMINAL='wezterm'
 
+# Miscellaneous options
+export FZF_DEFAULT_COMMAND='fd -utf'
+
 # Add paths to $PATH if they're not already present
 add_path() {
     [[ ":$PATH:" != *":$1:"* ]] && PATH="$PATH:$1"

@@ -1,21 +1,5 @@
-# Source .zshenv
-[[ -f ~/.zshenv ]] && . ~/.zshenv
-
-# Aliases
-alias aria2c="aria2c -d $HOME/Downloads"
-alias fcd='cd "$(fd -Ht d | fzf)"'
-alias d='eval cd "$(dirs -p | fzf)"'
-alias diff='diff --color=auto'
-alias e='$EDITOR'
-alias f='lf'
-alias grep='grep --color=auto'
-alias l='eza -al --icons --git'
-alias lf='cd "$(\lf -print-last-dir)"'
-alias ls='ls --color=auto'
-alias pacman='pacman --color=auto'
-alias rm='rm -i'
-alias sudo='sudo '
-alias yay='yay --color=auto'
+. ~/.config/shell/aliases.sh
+. ~/.config/shell/env.sh
 
 # Quickly evaluate a Python expression
 py() {

@@ -1,0 +1,6 @@
+catppuccin-cursors-mocha
+catppuccin-gtk-theme-mocha
+catppuccinifier-cli-bin
+i3lock-color
+mcpelauncher-appimage
+prismlauncher-qt5-bin

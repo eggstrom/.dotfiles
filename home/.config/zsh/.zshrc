@@ -32,7 +32,8 @@ setopt hist_save_no_dups
 setopt share_history
 
 # Miscellaneous options
-setopt globdots # Show hidden files when globbing
+setopt globdots  # Show hidden files when globbing
+setopt noclobber # Don't overwrite files when redirecting
 
 # Key binds
 bindkey '^?'      backward-delete-char  # Backspace

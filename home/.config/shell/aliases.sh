@@ -6,7 +6,7 @@ alias mv='mv -vi'
 alias cp='cp -vir'
 alias rm='rm -vir'
 alias mkdir='mkdir -vp'
-alias rmdir='rmdir -vp'
+alias rmdir='rmdir -v'
 
 # Colored output
 alias diff='diff --color=auto'

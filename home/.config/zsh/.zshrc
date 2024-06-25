@@ -19,8 +19,8 @@ fman() {
 
 # Directory options
 setopt auto_cd           # Change directory without cd
-setopt auto_pushd        # Push directory onto stack when changing it
-setopt pushd_ignore_dups # Don't put duplicates in directory stack
+setopt auto_pushd        # Push visited directories onto stack
+setopt pushd_ignore_dups # Prevent duplicate directories in stack
 
 # History options
 setopt hist_expire_dups_first
@@ -32,7 +32,7 @@ setopt hist_save_no_dups
 setopt share_history
 
 # Miscellaneous options
-setopt glob_dots  # Show hidden files when globbing
+setopt glob_dots  # Show dotfiles during expansion
 setopt no_clobber # Don't overwrite files when redirecting
 
 # Key binds

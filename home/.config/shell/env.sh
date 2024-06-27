@@ -30,7 +30,7 @@ export HISTCONTROL='ignoreboth:erasedups'
 
 # Consistent colors between terminal and terminal programs
 export BAT_THEME='base16-256'
-export FZF_DEFAULT_OPTS='--color=16'
+export FZF_DEFAULT_OPTS='--color=16 --prompt="❯ "'
 eval "$(dircolors)"
 
 # Theming

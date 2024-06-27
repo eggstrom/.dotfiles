@@ -75,9 +75,8 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select                      # Enable highlight on selected item
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Enable file colors
 
-# Source plugins
+# Enable plugins and integration
 . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Enable Starship
 eval "$(starship init zsh)"
+eval "$(fzf --zsh)"

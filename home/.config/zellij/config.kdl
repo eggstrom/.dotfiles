@@ -25,8 +25,8 @@ keybinds clear-defaults=true {
         bind "Down"  "j" "Ctrl j" { MoveFocus "Down";  SwitchToMode "Normal"; }
         bind "Up"    "k" "Ctrl k" { MoveFocus "Up";    SwitchToMode "Normal"; }
         bind "Right" "l" "Ctrl l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "n" "Ctrl n"         { GoToNextTab;       SwitchToMode "Normal"; }
-        bind "p" "Ctrl p"         { GoToPreviousTab;   SwitchToMode "Normal"; }
+        bind         "n" "Ctrl n" { GoToNextTab;       SwitchToMode "Normal"; }
+        bind         "p" "Ctrl p" { GoToPreviousTab;   SwitchToMode "Normal"; }
 
         bind "1" "Ctrl 1" { GoToTab 1;  SwitchToMode "Normal"; }
         bind "2" "Ctrl 2" { GoToTab 2;  SwitchToMode "Normal"; }

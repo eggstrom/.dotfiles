@@ -18,7 +18,7 @@ keybinds clear-defaults=true {
                 floating true
                 move_to_focused_tab true
             };
-            SwitchToMode "Normal"
+            SwitchToMode "Normal";
         }
 
         bind "Left"  "h" "Ctrl h" { MoveFocus "Left";  SwitchToMode "Normal"; }

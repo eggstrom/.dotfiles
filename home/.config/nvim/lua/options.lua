@@ -20,11 +20,9 @@ vim.o.shiftwidth = 4   -- Width of an indentation level
 vim.o.ignorecase = true -- Disable case sensitivity
 vim.o.smartcase = true  -- Enable case sensitivity when using caps
 
--- Folds (TODO: Enable fold column when PR #17446 gets merged)
+-- Folds
 vim.o.foldlevel = 99   -- Keep folds open by default
 vim.o.foldcolumn = "0" -- Width of fold column
-vim.opt.fillchars = {  -- Characters in fold column
-    foldopen  = "",
-    foldclose = "",
-    foldsep   = " ",
-}
+
+-- Miscellaneous
+vim.o.timeout = false -- Disable leader key timeout

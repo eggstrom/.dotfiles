@@ -45,10 +45,10 @@ keybinds clear-defaults=true {
         bind "Down"  "j" "Ctrl j" { MovePane "Down"; }
         bind "Up"    "k" "Ctrl k" { MovePane "Up"; }
         bind "Right" "l" "Ctrl l" { MovePane "Right"; }
-        bind "]" "Ctrl ]" { BreakPaneRight; }
-        bind "[" "Ctrl [" { BreakPaneLeft; }
-        bind "n" "Ctrl n" { MoveTab "Right"; }
-        bind "p" "Ctrl p" { MoveTab "Left"; }
+        bind         "]" "Ctrl ]" { BreakPaneRight; }
+        bind         "[" "Ctrl [" { BreakPaneLeft; }
+        bind         "n" "Ctrl n" { MoveTab "Right"; }
+        bind         "p" "Ctrl p" { MoveTab "Left"; }
 
         bind "m" "Ctrl m" { SwitchToMode "tmux"; }
     }
@@ -58,8 +58,8 @@ keybinds clear-defaults=true {
         bind "Down"  "j" "Ctrl j" { Resize "Down"; }
         bind "Up"    "k" "Ctrl k" { Resize "Up"; }
         bind "Right" "l" "Ctrl l" { Resize "Right"; }
-        bind "n" "Ctrl n" { Resize "Increase"; }
-        bind "p" "Ctrl p" { Resize "Decrease"; }
+        bind         "n" "Ctrl n" { Resize "Increase"; }
+        bind         "p" "Ctrl p" { Resize "Decrease"; }
 
         bind "r" "Ctrl r" { SwitchToMode "tmux"; }
     }
@@ -73,7 +73,7 @@ keybinds clear-defaults=true {
     }
 
     shared_except "Normal" {
-        bind "Space" "Ctrl Space" "Ctrl c" "Enter" "Esc" { SwitchToMode "Normal"; }
+        bind "Space" "Ctrl Space" "Enter" "Esc" "Ctrl c" { SwitchToMode "Normal"; }
     }
 }
 

@@ -47,9 +47,9 @@ bind_r L       resizep -R
 bind_  f       resizep -Z
 
 # Windows
-bind_ w neww -c "#{pane_current_path}"
-bind_ n next
-bind_ p prev
+bind_ w neww -c '#{pane_current_path}'
+bind_ n run-shell 'tmux next || true'
+bind_ p run-shell 'tmux prev || true'
 bind_ 1 selectw -t :1
 bind_ 2 selectw -t :2
 bind_ 3 selectw -t :3

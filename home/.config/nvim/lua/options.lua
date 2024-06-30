@@ -1,5 +1,6 @@
 -- General options
 vim.o.mouse = "a"     -- Enable mouse in all modes
+vim.o.timeout = false -- Disable leader key timeout
 vim.o.undofile = true -- Save undo history
 
 -- Appearance
@@ -23,6 +24,3 @@ vim.o.smartcase = true  -- Enable case sensitivity when using caps
 -- Folds
 vim.o.foldlevel = 99   -- Keep folds open by default
 vim.o.foldcolumn = "0" -- Width of fold column
-
--- Miscellaneous
-vim.o.timeout = false -- Disable leader key timeout

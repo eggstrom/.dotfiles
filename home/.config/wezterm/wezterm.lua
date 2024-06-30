@@ -4,7 +4,7 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.default_prog = { "zellij" }
+config.default_prog = { "tmux" }
 config.window_close_confirmation = "NeverPrompt"
 
 -- Appearance

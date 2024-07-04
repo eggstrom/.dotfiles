@@ -62,10 +62,15 @@ bind_ 9 selectw -t :9
 bind_ 0 selectw -t :10
 
 # Sessions
+bind_ r command-prompt -p 'Session name:' 'rename %1'
 bind_ d detach
-bind_ a choose-session
+bind_ a display-popup -E \
+    "tmux ls | \
+     fzf --bind='ctrl-q:execute(echo {} | cut -d: -f1 | xargs -d\"\n\" tmux kill-session -t)+reload(tmux ls)' | \
+     cut -d: -f1 | \
+     xargs tmux switchc -t 2>/dev/null || true"
 
 # Miscellaneous
 bind_ c clearhist
-bind_ r source ~/.config/tmux/tmux.conf
+bind_ . source ~/.config/tmux/tmux.conf
 bind_ : command-prompt

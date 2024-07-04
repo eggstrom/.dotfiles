@@ -28,16 +28,13 @@ export HISTSIZE=1000
 export SAVEHIST="$HISTSIZE"
 export HISTCONTROL='ignoreboth:erasedups'
 
-# Consistent colors between terminal and terminal programs
-export BAT_THEME='base16-256'
-export FZF_DEFAULT_OPTS='--color=16 --prompt="❯ "'
-eval "$(dircolors)"
-
 # Theming
 export XCURSOR_THEME='catppuccin-mocha-dark-cursors'
 export XCURSOR_SIZE=48
 export GTK_THEME='catppuccin-mocha-red-standard+default'
 export QT_QPA_PLATFORMTHEME='qt5ct'
+export BAT_THEME='base16-256'
+eval "$(dircolors)"
 
 # Default programs
 export EDITOR='nvim'
@@ -45,8 +42,11 @@ export SUDO_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 export TERMINAL='wezterm'
 
-# Miscellaneous options
+# fzf
+export FZF_DEFAULT_OPTS='--color=16 --prompt="❯ "'
 export FZF_DEFAULT_COMMAND='fd -u'
+export FZF_CTRL_T_COMMAND='fd -u'
+export FZF_ALT_C_COMMAND='fd -utd'
 
 # Add paths to $PATH if they're not already present
 add_path() {

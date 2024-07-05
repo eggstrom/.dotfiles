@@ -62,13 +62,16 @@ bind_ 9 selectw -t :9
 bind_ 0 selectw -t :10
 
 # Sessions
-bind_ r command-prompt -p 'Session name:' 'rename %1'
+bind_ r command-prompt -p 'Session name:' 'run-shell "echo %% | tr \" \" - | xargs tmux rename"'
 bind_ d detach
-bind_ a display-popup -E \
-    "tmux ls | \
-     fzf --bind='ctrl-q:execute(echo {} | cut -d: -f1 | xargs -d\"\n\" tmux kill-session -t)+reload(tmux ls)' | \
-     cut -d: -f1 | \
-     xargs tmux switchc -t 2>/dev/null || true"
+
+LIST_SESSIONS="tmux ls \
+    | sed -e $'/(attached)$/ s/^/\e[32m/' \
+          -e $'/(attached)$/! s/^/\e[33m/'"
+bind_ a display-popup -E "$LIST_SESSIONS \
+    | fzf --ansi --bind=\"ctrl-q:execute(echo {} | cut -d: -f1 | xargs tmux kill-session -t)+reload($LIST_SESSIONS)\" \
+    | cut -d: -f1 \
+    | xargs tmux switchc -t 2>/dev/null || true"
 
 # Miscellaneous
 bind_ c clearhist

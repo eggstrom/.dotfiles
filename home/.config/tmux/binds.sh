@@ -69,7 +69,9 @@ LIST_SESSIONS="tmux ls \
     | sed -e $'/(attached)$/ s/^/\e[32m/' \
           -e $'/(attached)$/! s/^/\e[33m/'"
 bind_ a display-popup -E "$LIST_SESSIONS \
-    | fzf --ansi --bind=\"ctrl-q:execute(echo {} | cut -d: -f1 | xargs tmux kill-session -t)+reload($LIST_SESSIONS)\" \
+    | fzf --ansi \
+          --bind=\"ctrl-q:execute(echo {} | cut -d: -f1 | xargs tmux kill-session -t)+reload($LIST_SESSIONS)\" \
+          --bind=\"ctrl-r:reload($LIST_SESSIONS)\" \
     | cut -d: -f1 \
     | xargs tmux switchc -t 2>/dev/null || true"
 

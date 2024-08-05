@@ -47,6 +47,10 @@ return {
                         library = { vim.env.VIMRUNTIME },
                     },
                 },
+                ["rust-analyzer"] = {
+                    -- Disable snippet spam in completion menu
+                    completion = { postfix = { enable = false } },
+                },
                 zls = { enable_autofix = false },
             },
         }
@@ -76,6 +80,7 @@ return {
         lspconfig.taplo.setup(settings)
         lspconfig.tsserver.setup(settings)
         lspconfig.vimls.setup(settings)
+        lspconfig.wgsl_analyzer.setup(settings)
         lspconfig.yamlls.setup(settings)
         lspconfig.zls.setup(vim.tbl_extend("force", settings, {
             on_init = function()
